@@ -1,0 +1,53 @@
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+}
+
+.bento-card {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bento-card:hover {
+    transform: scale(1.02);
+    filter: brightness(1.1);
+}
+
+.glass-dark {
+    background: rgba(17, 24, 39, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.text-glow {
+    text-shadow: 0 0 20px rgba(62, 158, 198, 0.4);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Scroll reveal utility classes */
+.reveal {
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.active {
+    /* Animation state is handled by JS adding/removing classes if needed, 
+    but by default we want things visible. */
+}

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito - Integrakin Medicina Estética</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind.config.js"></script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syncopate:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-[#FAFAFA] text-secondary selection:bg-primary selection:text-white min-h-screen flex flex-col">
+
+    <!-- Navigation (Simple for Checkout Focus) -->
+    <header id="main-header" class="fixed top-8 left-0 right-0 z-50 transition-all duration-500 px-6">
+        <div
+            class="container mx-auto px-6 h-20 bg-white/80 backdrop-blur-xl rounded-full border border-gray-100 flex items-center justify-between shadow-sm">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center group">
+                <img src="assets/images/logo.webp" alt="Integrakin"
+                    class="h-8 md:h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-10 h-full">
+                <a href="index.html"
+                    class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors">Inicio</a>
+                <!-- Tienda with Mega Menu -->
+                <div class="group h-full flex items-center">
+                    <a href="tienda.html"
+                        class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors flex items-center gap-1">
+                        Tienda <i data-lucide="chevron-down" class="w-2.5 h-2.5"></i>
+                    </a>
+                    <!-- Mega Menu Dropdown -->
+                    <div
+                        class="fixed top-20 left-1/2 -translate-x-1/2 w-full max-w-screen-2xl pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 z-50 pointer-events-none">
+                        <div
+                            class="bg-white rounded-3xl shadow-2xl p-12 lg:p-16 border border-gray-100 pointer-events-auto flex gap-10">
+                            <div class="grid grid-cols-5 gap-10 flex-1">
+                                <!-- Corporal -->
+                                <div class="flex flex-col">
+                                    <h5
+                                        class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4">
+                                        CORPORALES</h5>
+                                    <ul class="space-y-3">
+                                        <li><a href="tienda.html?cat=body-shape"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Body
+                                                Shape</a></li>
+                                        <li><a href="tienda.html?cat=bodysculptpro"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Bodysculpt
+                                                Pro</a></li>
+                                        <li><a href="tienda.html?cat=criofrecuencia"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Criofrecuencia</a>
+                                        </li>
+                                        <li><a href="tienda.html?cat=criolipolisis"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Criolipólisis</a>
+                                        </li>
+                                        <li><a href="tienda.html?cat=depilacion"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Depilación
+                                                Laser / IPL</a></li>
+                                        <li><a href="tienda.html?cat=electroestimuladores"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Electroestimuladores</a>
+                                        </li>
+                                        <li><a href="tienda.html?cat=hifu"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">HIFU
+                                                Corporal</a></li>
+                                        <li><a href="tienda.html?cat=lipolaser-laserlipolisis"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Lipoláser
+                                                / Laserlipólisis</a></li>
+                                        <li><a href="tienda.html?cat=ondas-de-choque"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Ondas
+                                                de Choque</a></li>
+                                        <li><a href="tienda.html?cat=presoterapia"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Presoterapia</a>
+                                        </li>
+                                        <li><a href="tienda.html?cat=vacuumterapia"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Vacuumterapia
+                                                / Glúteos</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Facial -->
+                                <div class="flex flex-col">
+                                    <h5
+                                        class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4">
+                                        FACIALES</h5>
+                                    <ul class="space-y-3">
+                                        <li><a href="tienda.html?cat=analizadores-de-piel"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Analizadores
+                                                de Piel IA</a></li>
+                                        <li><a href="tienda.html?cat=dermapen"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Dermapen</a>
+                                        </li>
+                                        <li><a href="tienda.html?cat=fototerapia"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Fototerapia</a>
+                                        </li>
+                                        <li><a href="tienda.html?cat=hidrodermoabrasion"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Hidrodermo
+                                                / Hydrapeel</a></li>
+                                        <li><a href="tienda.html?cat=microdermoabrasion"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Microdermoabrasión</a>
+                                        </li>
+                                        <li><a href="tienda.html?cat=peeling-ultrasonico"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Peeling
+                                                Ultrasónico</a></li>
+                                        <li><a href="tienda.html?cat=radiofrecuencia-faciales"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Radiofrecuencia
+                                                Facial</a></li>
+                                        <li><a href="tienda.html?cat=radiofrecuencia-fraccionada"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">RF
+                                                Fraccionada</a></li>
+                                        <li><a href="tienda.html?cat=vapor-ozono"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Vapor
+                                                Ozono</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Rehabilitación -->
+                                <div class="flex flex-col">
+                                    <h5
+                                        class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4">
+                                        REHABILITACIÓN</h5>
+                                    <ul class="space-y-3">
+                                        <li><a href="tienda.html?cat=electroestimulador"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Electroestimulador</a>
+                                        </li>
+                                        <li><a href="tienda.html?cat=manta-termica-sauna"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Manta
+                                                Térmica (Sauna)</a></li>
+                                        <li><a href="tienda.html?cat=ondas-de-choque-rehabilitacion"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Ondas
+                                                de Choque Rehab</a></li>
+                                        <li><a href="tienda.html?cat=tecarterapia"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Tecarterapia</a>
+                                        </li>
+                                        <li><a href="tienda.html?cat=ultrasonido-rehabilitacion"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Ultrasonido
+                                                Rehab</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Mobiliario & Insumos -->
+                                <div class="flex flex-col">
+                                    <h5
+                                        class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4">
+                                        EQUIPAMIENTO</h5>
+                                    <ul class="space-y-3">
+                                        <li><a href="tienda.html?cat=mobiliario"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Mobiliario
+                                                Clínico</a></li>
+                                        <li><a href="tienda.html?cat=mesas-de-apoyo"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Mesas
+                                                de Apoyo</a></li>
+                                        <li><a href="tienda.html?cat=insumos-y-repuestos"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Insumos
+                                                y Repuestos</a></li>
+                                        <li><a href="tienda.html?cat=activos-soluciones"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Activos
+                                                / Soluciones</a></li>
+                                        <li><a href="tienda.html?cat=calentador-de-gel"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Calentador
+                                                de Gel</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Otros -->
+                                <div class="flex flex-col">
+                                    <h5
+                                        class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4">
+                                        SECCIONES</h5>
+                                    <ul class="space-y-3">
+                                        <li><a href="tienda.html?cat=nuevo"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Novedades</a>
+                                        </li>
+                                        <li><a href="tienda.html?cat=ofertas"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block underline decoration-purple underline-offset-4">Ofertas
+                                                Especiales</a></li>
+                                        <li><a href="tienda.html?cat=packs"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Packs
+                                                de Lanzamiento</a></li>
+                                        <li><a href="tienda.html?cat=home-care"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Home
+                                                Care</a></li>
+                                        <li><a href="tienda.html?cat=mas-vendidos"
+                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Más
+                                                Vendidos</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Featured Sidebar -->
+                            <div class="w-80 flex flex-col gap-6">
+                                <div
+                                    class="flex-1 bg-gray-50 rounded-3xl p-8 border border-gray-100 flex flex-col justify-between">
+                                    <div>
+                                        <span
+                                            class="text-xs font-black text-primary uppercase tracking-widest mb-2 block">Marca
+                                            Exclusiva</span>
+                                        <h4 class="font-sync text-lg tracking-tighter mb-2">WONDER®</h4>
+                                        <p
+                                            class="text-xs text-gray-400 font-bold uppercase tracking-widest leading-tight">
+                                            Musculación Estética Profunda.</p>
+                                    </div>
+                                    <a href="tienda.html?brand=wonder"
+                                        class="text-xs font-black text-primary uppercase tracking-widest flex items-center gap-2 group/btn">
+                                        Ver Ahora <i data-lucide="arrow-right"
+                                            class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                                    </a>
+                                </div>
+                                <div
+                                    class="flex-1 bg-gray-50 rounded-3xl p-8 border border-gray-100 flex flex-col justify-between">
+                                    <div>
+                                        <span
+                                            class="text-xs font-black text-primary uppercase tracking-widest mb-2 block">Marca
+                                            Exclusiva</span>
+                                        <h4 class="font-sync text-lg tracking-tighter mb-2">LEGOLÁSER®</h4>
+                                        <p
+                                            class="text-xs text-gray-400 font-bold uppercase tracking-widest leading-tight">
+                                            Master en Depilación Triláser.</p>
+                                    </div>
+                                    <a href="tienda.html?brand=legolaser"
+                                        class="text-xs font-black text-primary uppercase tracking-widest flex items-center gap-2 group/btn">
+                                        Ver Ahora <i data-lucide="arrow-right"
+                                            class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="cursos.html"
+                    class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors">Formación</a>
+                <a href="nosotros.html"
+                    class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors">Nosotros</a>
+                <a href="servicio-tecnico.html"
+                    class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors">Soporte</a>
+                <a href="contacto.html"
+                    class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="flex items-center gap-4">
+                <button class="hidden lg:flex p-2 hover:bg-gray-50 rounded-full transition-colors group">
+                    <i data-lucide="search"
+                        class="w-4 h-4 text-secondary group-hover:text-primary transition-colors"></i>
+                </button>
+                <button id="cart-trigger"
+                    class="hidden lg:flex p-2 hover:bg-gray-50 rounded-full transition-colors relative group">
+                    <i data-lucide="shopping-bag"
+                        class="w-4 h-4 text-secondary group-hover:text-primary transition-colors"></i>
+                    <span
+                        class="absolute -top-1 -right-1 w-4 h-4 bg-primary text-[8px] text-white flex items-center justify-center rounded-full font-black">2</span>
+                </button>
+                <button id="mobile-menu-trigger" class="lg:hidden p-2 hover:bg-gray-50 rounded-full transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Premium Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-full md:w-[450px] bg-white z-[100] transform translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] shadow-[-20px_0_60px_rgba(0,0,0,0.1)] lg:hidden">
+        <div class="h-full flex flex-col p-8 md:p-12">
+            <!-- Header -->
+            <div class="flex items-center justify-between mb-20">
+                <img src="assets/images/logo.webp" alt="Logo" class="h-8 w-auto">
+                <button id="mobile-menu-close"
+                    class="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all duration-300">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Search in Mobile Menu -->
+            <div class="relative mb-10">
+                <input type="text" placeholder="Buscador de productos..."
+                    class="w-full bg-gray-50 border border-gray-100 rounded-xl px-12 py-4 text-xs font-bold uppercase tracking-widest outline-none focus:ring-2 focus:ring-primary/20 transition-all">
+                <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex flex-col space-y-1">
+                <a href="index.html"
+                    class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all">
+                    <span>INICIO</span>
+                    <i data-lucide="arrow-right"
+                        class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
+                </a>
+                <a href="tienda.html"
+                    class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all">
+                    <span>TIENDA</span>
+                    <i data-lucide="arrow-right"
+                        class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
+                </a>
+                <a href="cursos.html"
+                    class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all">
+                    <span>FORMACIÓN</span>
+                    <i data-lucide="arrow-right"
+                        class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
+                </a>
+                <a href="nosotros.html"
+                    class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all">
+                    <span>NOSOTROS</span>
+                    <i data-lucide="arrow-right"
+                        class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
+                </a>
+                <a href="contacto.html"
+                    class="group flex items-center justify-between py-5 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all">
+                    <span>CONTACTO</span>
+                    <i data-lucide="arrow-right"
+                        class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
+                </a>
+            </nav>
+
+            <!-- Bottom Section -->
+            <div class="mt-auto">
+                <button
+                    class="w-full bg-primary hover:bg-secondary text-white py-5 rounded-2xl text-xs font-black uppercase tracking-widest flex items-center justify-center gap-3 transition-all duration-500 mb-8 shadow-xl shadow-primary/20">
+                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    Ver Carrito (2)
+                </button>
+
+                <div class="bg-gray-50 p-6 rounded-2xl mb-8 border border-gray-100">
+                    <p class="text-[9px] font-black uppercase tracking-[0.2em] text-primary mb-2 text-center">Envíos
+                        Gratis</p>
+                    <p class="text-[10px] font-bold text-gray-400 text-center uppercase tracking-widest">Sobre $49.990
+                        en todo Chile</p>
+                </div>
+
+                <div class="flex items-center justify-between pb-4">
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all">
+                            <i data-lucide="facebook" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                    <span class="text-[10px] font-bold text-gray-300 uppercase tracking-widest">v2.0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-1 container mx-auto px-6 py-12 mt-20">
+        <a href="tienda.html"
+            class="text-lg font-black uppercase tracking-widest text-gray-400 hover:text-primary transition-colors">Seguir
+            Comprando</a>
+
+        <h1 class="font-sync text-4xl mt-4 mb-12 tracking-tighter text-secondary uppercase leading-none">Tu <span
+                class="text-primary italic">Carrito.</span></h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <!-- Items Area -->
+            <div class="lg:col-span-8 space-y-6">
+                <!-- Cart Item 1 -->
+                <div
+                    class="bg-white rounded-3xl p-6 md:p-8 border border-gray-100 flex flex-col sm:flex-row items-center gap-8 group">
+                    <div class="w-32 h-32 bg-gray-50 rounded-2xl overflow-hidden shrink-0">
+                        <img src="assets/images/maquinas/1.webp"
+                            class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="flex-1 text-center sm:text-left">
+                        <h3 class="font-sync text-lg tracking-tighter text-secondary uppercase mb-2">Wonder Precision
+                        </h3>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-4">Mobiliario Clínico
+                        </p>
+                        <div class="flex items-center justify-center sm:justify-start gap-4">
+                            <span class="text-xl font-sync tracking-tighter text-secondary">$2.490.990</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center sm:items-end gap-6 w-full sm:w-auto">
+                        <div class="flex items-center bg-gray-50 rounded-xl p-1 border border-gray-100">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center hover:text-primary transition-colors"><i
+                                    data-lucide="minus" class="w-3 h-3"></i></button>
+                            <span class="w-8 text-center text-xs font-bold">1</span>
+                            <button
+                                class="w-10 h-10 flex items-center justify-center hover:text-primary transition-colors"><i
+                                    data-lucide="plus" class="w-3 h-3"></i></button>
+                        </div>
+                        <button
+                            class="text-[10px] font-bold text-gray-300 hover:text-red-500 uppercase tracking-widest transition-colors flex items-center gap-2">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cart Item 2 -->
+                <div
+                    class="bg-white rounded-3xl p-6 md:p-8 border border-gray-100 flex flex-col sm:flex-row items-center gap-8 group">
+                    <div class="w-32 h-32 bg-gray-50 rounded-2xl overflow-hidden shrink-0">
+                        <img src="assets/images/maquinas/3.webp"
+                            class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="flex-1 text-center sm:text-left">
+                        <h3 class="font-sync text-lg tracking-tighter text-secondary uppercase mb-2">DermoPro Max</h3>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-4">Equipos Faciales
+                        </p>
+                        <div class="flex items-center justify-center sm:justify-start gap-4">
+                            <span class="text-xl font-sync tracking-tighter text-secondary">$1.299.990</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center sm:items-end gap-6 w-full sm:w-auto">
+                        <div class="flex items-center bg-gray-50 rounded-xl p-1 border border-gray-100">
+                            <button
+                                class="w-10 h-10 flex items-center justify-center hover:text-primary transition-colors"><i
+                                    data-lucide="minus" class="w-3 h-3"></i></button>
+                            <span class="w-8 text-center text-xs font-bold">1</span>
+                            <button
+                                class="w-10 h-10 flex items-center justify-center hover:text-primary transition-colors"><i
+                                    data-lucide="plus" class="w-3 h-3"></i></button>
+                        </div>
+                        <button
+                            class="text-[10px] font-bold text-gray-300 hover:text-red-500 uppercase tracking-widest transition-colors flex items-center gap-2">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Area -->
+            <div class="lg:col-span-4">
+                <div class="bg-white rounded-[2.5rem] p-10 border border-gray-100 shadow-sm sticky top-12">
+                    <h2
+                        class="font-sync text-2xl tracking-tighter text-secondary uppercase mb-10 pb-6 border-b border-gray-50">
+                        Resumen</h2>
+
+                    <div class="space-y-6 mb-10">
+                        <div class="flex justify-between text-xs font-bold uppercase tracking-widest text-gray-400">
+                            <span>Subtotal</span>
+                            <span class="text-secondary">$3.790.980</span>
+                        </div>
+                        <div class="flex justify-between text-xs font-bold uppercase tracking-widest text-gray-400">
+                            <span>Envío</span>
+                            <span class="text-secondary italic">Gratis</span>
+                        </div>
+                        <div class="pt-6 border-t border-gray-50 flex justify-between">
+                            <span class="text-[10px] font-black uppercase tracking-[0.2em] text-secondary">Total (IVA
+                                incl.)</span>
+                            <span
+                                class="text-3xl font-sync tracking-tighter text-primary leading-none">$3.790.980</span>
+                        </div>
+                    </div>
+
+                    <button
+                        class="w-full bg-secondary hover:bg-primary text-white py-6 rounded-2xl text-xs font-black uppercase tracking-[0.2em] transition-all duration-500 shadow-xl shadow-secondary/20 mb-6 active:scale-[0.98]">
+                        Ir al Pago Seguro
+                    </button>
+
+                    <div class="p-4 bg-gray-50 rounded-xl flex items-center gap-4 border border-gray-100">
+                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-primary">
+                            <i data-lucide="shield-check" class="w-5 h-5"></i>
+                        </div>
+                        <p class="text-[8px] font-bold uppercase tracking-widest text-gray-400 leading-relaxed">
+                            Transacción 100% protegida con encriptación SSL</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 px-6 border-t border-gray-100 bg-white">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <p class="text-[9px] font-bold uppercase tracking-widest text-gray-400">© 2026 INTEGRAKIN Medicina Estética
+            </p>
+            <div class="flex gap-8">
+                <i data-lucide="credit-card" class="w-4 h-4 text-gray-200"></i>
+                <i data-lucide="lock" class="w-4 h-4 text-gray-200"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>
