@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Global Data
     const products = [
-        { name: "Wonder Precision", price: "$2.490.990", img: "assets/images/maquinas/1.webp", cat: "Musculación", featured: true },
-        { name: "LegoLaser Trio", price: "$8.990.000", img: "assets/images/maquinas/2.webp", cat: "Depilación", featured: true },
-        { name: "DermoPro Max", price: "$1.299.990", img: "assets/images/maquinas/3.webp", cat: "Facial", featured: true },
-        { name: "CryoSculpt Pro", price: "$5.490.000", img: "assets/images/maquinas/4.webp", cat: "Corporal", featured: true },
-        { name: "HIFU S-Line", price: "$4.150.000", img: "assets/images/maquinas/5.webp", cat: "Lifting", featured: true },
-        { name: "LipoPlus 360", price: "$3.890.000", img: "assets/images/maquinas/1.webp", cat: "Corporal", featured: true },
-        { name: "UltraSHR Laser", price: "$7.499.990", img: "assets/images/maquinas/2.webp", cat: "Depilación", featured: true },
-        { name: "HydroReveal", price: "$990.000", img: "assets/images/maquinas/3.webp", cat: "Facial", featured: true }
+        { name: "Wonder Precision", price: "$2.490.990", img: "assets/images/maquinas/1.webp", cat: "Musculación", featured: true, discount: "-15%" },
+        { name: "LegoLaser Trio", price: "$8.990.000", img: "assets/images/maquinas/2.webp", cat: "Depilación", featured: true, discount: "-20%" },
+        { name: "DermoPro Max", price: "$1.299.990", img: "assets/images/maquinas/3.webp", cat: "Facial", featured: true, discount: "-10%" },
+        { name: "CryoSculpt Pro", price: "$5.490.000", img: "assets/images/maquinas/4.webp", cat: "Corporal", featured: true, discount: "-25%" },
+        { name: "HIFU S-Line", price: "$4.150.000", img: "assets/images/maquinas/5.webp", cat: "Lifting", featured: true, discount: "-15%" },
+        { name: "LipoPlus 360", price: "$3.890.000", img: "assets/images/maquinas/1.webp", cat: "Corporal", featured: true, discount: "-30%" },
+        { name: "UltraSHR Laser", price: "$7.499.990", img: "assets/images/maquinas/2.webp", cat: "Depilación", featured: true, discount: "-20%" },
+        { name: "HydroReveal", price: "$990.000", img: "assets/images/maquinas/3.webp", cat: "Facial", featured: true, discount: "-10%" }
     ];
 
     // 3. Render Helper
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="group ${isSlider ? 'w-80 shrink-0 snap-start' : 'w-full'} bg-white rounded-2xl border border-gray-100 hover:shadow-2xl transition-all duration-500 relative">
                 <div class="aspect-square bg-gray-50 rounded-xl overflow-hidden mb-6 relative">
                     <img src="${p.img}" alt="${p.name}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" loading="lazy">
-                    <span class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-primary shadow-sm">${p.cat}</span>
+                    <span class="absolute top-4 left-4 bg-primary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-sm">${p.discount}</span>
                     
                     <!-- Hover Action -->
                     <div class="absolute inset-x-0 bottom-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-10">
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="p-6">
                     <h3 class="font-sync text-sm md:text-xl tracking-tighter mb-2 uppercase text-secondary leading-tight">${p.name}</h3>
                     <p class="text-primary font-black tracking-widest text-md mb-6">${p.price}</p>
-                    <a href="producto.html" class="flex items-center justify-between text-xs font-black uppercase tracking-widest group/btn border-t border-gray-50 pt-4 after:absolute after:inset-0 after:z-20">
+                    <a href="producto.html" class="flex items-center justify-between text-xs font-black uppercase tracking-widest group/btn border-t border-gray-50 pt-4 after:absolute after:inset-0 after:z-20 text-primary hover:text-secondary transition-colors">
                         Ver Detalles <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
@@ -73,8 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Category Marquee
     const catContainer = document.getElementById('categories-container');
     if (catContainer) {
-        const cats = ["CORPORALES", "FACIALES", "REHABILITACIÓN", "MOBILIARIO", "INSUMOS", "OFERTAS", "PACKS", "WONDER", "LEGOLÁSER"];
-        const html = cats.map(c => `<span class="text-3xl md:text-5xl font-sync tracking-tighter text-secondary/5 hover:text-primary transition-colors cursor-default uppercase">${c}</span>`).join('');
+        const cats = [
+            "36 cuotas sin interés, tarjeta Santander",
+            "Despacho gratis a todo Chile",
+            "Capacitación y formación para el uso de los equipos",
+            "12 meses de garantía",
+            "Equipos y Marcas exclusivas"
+        ];
+        const html = cats.map(c => `<span class="text-xl md:text-2xl font-sync tracking-tighter text-secondary hover:text-primary transition-colors cursor-default uppercase">${c}</span>`).join('');
         catContainer.innerHTML = html + html;
     }
 
@@ -214,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="flex flex-col">
                 <div class="mb-10">
                     <span class="inline-block bg-primary/10 text-primary text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-6">${p.cat}</span>
-                    <h1 class="font-sync text-4xl lg:text-5xl tracking-tighter text-secondary mb-4 uppercase leading-none">${p.name}</h1>
+                    <h1 class="font-sync text-3xl lg:text-4xl tracking-tighter text-secondary mb-4 uppercase leading-none">${p.name}</h1>
                     <div class="flex items-center gap-4 text-xs font-bold text-gray-400 uppercase tracking-widest">
                         <div class="flex text-yellow-400">
                             <i data-lucide="star" class="w-3 h-3 fill-current"></i>
