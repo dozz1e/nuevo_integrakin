@@ -1,9 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es" class="scroll-smooth">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Integrakin | Medicina Estética de Alta Gama</title>
     <!-- Tailwind CSS with custom config -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,1028 +10,1661 @@
 
     <!-- Google Fonts: Plus Jakarta for body, Syncopate for bold headers -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syncopate:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
-        :root {
-            --primary: #1F88B6;
-            --secondary: #111827;
-            --purple: #A558A5;
-        }
+      :root {
+        --primary: #1f88b6;
+        --secondary: #111827;
+        --purple: #a558a5;
+      }
 
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #ffffff;
-            color: var(--secondary);
-            overflow-x: hidden;
-        }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: #ffffff;
+        color: var(--secondary);
+        overflow-x: hidden;
+      }
 
-        .font-sync {
-            font-family: 'Syncopate', sans-serif;
-        }
+      .font-sync {
+        font-family: "Syncopate", sans-serif;
+      }
 
-        .font-playfair {
-            font-family: 'Playfair Display', serif;
-        }
+      .font-playfair {
+        font-family: "Playfair Display", serif;
+      }
 
-        .glass-card {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
 
-        .featured-gradient {
-            background: linear-gradient(135deg, #f3e8ff 0%, #e0f2fe 100%);
-        }
+      .featured-gradient {
+        background: linear-gradient(135deg, #f3e8ff 0%, #e0f2fe 100%);
+      }
 
-        .hero-gradient {
-            background: linear-gradient(to right, rgba(17, 24, 39, 0.8) 0%, rgba(17, 24, 39, 0.4) 50%, transparent 100%);
-        }
+      .hero-gradient {
+        background: linear-gradient(
+          to right,
+          rgba(17, 24, 39, 0.8) 0%,
+          rgba(17, 24, 39, 0.4) 50%,
+          transparent 100%
+        );
+      }
 
-        /* Rye Island inspired minimalist scrollbar */
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
+      /* Rye Island inspired minimalist scrollbar */
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
 
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+      }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 10px;
-        }
+      ::-webkit-scrollbar-thumb {
+        background: var(--primary);
+        border-radius: 10px;
+      }
 
-        .text-balanced {
-            text-wrap: balance;
-        }
+      .text-balanced {
+        text-wrap: balance;
+      }
 
-        .mask-image {
-            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-        }
+      .mask-image {
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+      }
 
-        /* Floating interaction */
-        .hover-float {
-            transition: transform 0.3s ease;
-        }
+      /* Floating interaction */
+      .hover-float {
+        transition: transform 0.3s ease;
+      }
 
-        .hover-float:hover {
-            transform: translateY(-5px);
-        }
+      .hover-float:hover {
+        transform: translateY(-5px);
+      }
 
-        /* Animation delays */
-        .delay-1 {
-            animation-delay: 0.1s;
-        }
+      /* Animation delays */
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
 
-        .delay-2 {
-            animation-delay: 0.2s;
-        }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
 
-        .delay-3 {
-            animation-delay: 0.3s;
-        }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
     </style>
-</head>
+  </head>
 
-<body class="selection:bg-primary selection:text-white">
-
-    <div id="promo-bar"
-        class="hidden md:block bg-secondary text-white text-[8px] md:text-xs py-2 uppercase font-extrabold tracking-widest text-center sticky top-0 z-50 transition-transform duration-500">
-        ENVÍOS GRATIS A TODO CHILE POR COMPRAS SOBRE $49.990 POR WEBPAY (EXCLUYE MOBILIARIO CLÍNICO)
+  <body class="selection:bg-primary selection:text-white">
+    <div
+      id="promo-bar"
+      class="hidden md:block bg-secondary text-white text-[8px] md:text-xs py-2 uppercase font-extrabold tracking-widest text-center sticky top-0 z-50 transition-transform duration-500"
+    >
+      ENVÍOS GRATIS A TODO CHILE POR COMPRAS SOBRE $49.990 POR WEBPAY (EXCLUYE
+      MOBILIARIO CLÍNICO)
     </div>
 
     <!-- Navigation (Rye Island inspired) -->
-    <header id="main-header" class="fixed top-8 left-0 right-0 z-50 transition-all duration-500 px-6">
-        <div
-            class="container mx-auto px-6 h-20 bg-white/80 backdrop-blur-xl rounded-full border border-gray-100 flex items-center justify-between shadow-sm">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center group">
-                <img src="assets/images/logo.webp" alt="Integrakin"
-                    class="h-8 md:h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
+    <header
+      id="main-header"
+      class="fixed top-8 left-0 right-0 z-50 transition-all duration-500 px-6"
+    >
+      <div
+        class="container mx-auto px-6 h-20 bg-white/80 backdrop-blur-xl rounded-full border border-gray-100 flex items-center justify-between shadow-sm"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center group">
+          <img
+            src="assets/images/logo.webp"
+            alt="Integrakin"
+            class="h-8 md:h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+          />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center space-x-10 h-full">
+          <a
+            href="index.html"
+            class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors"
+            >Inicio</a
+          >
+          <!-- Tienda with Mega Menu -->
+          <div class="group h-full flex items-center">
+            <a
+              href="tienda.html"
+              class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors flex items-center gap-1"
+            >
+              Tienda <i data-lucide="chevron-down" class="w-2.5 h-2.5"></i>
             </a>
-
-            <!-- Desktop Nav -->
-            <nav class="hidden lg:flex items-center space-x-10 h-full">
-                <a href="index.html"
-                    class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors">Inicio</a>
-                <!-- Tienda with Mega Menu -->
-                <div class="group h-full flex items-center">
-                    <a href="tienda.html"
-                        class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors flex items-center gap-1">
-                        Tienda <i data-lucide="chevron-down" class="w-2.5 h-2.5"></i>
-                    </a>
-                    <!-- Mega Menu Dropdown -->
-                    <div
-                        class="fixed top-20 left-1/2 -translate-x-1/2 w-full max-w-screen-2xl pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 z-50 pointer-events-none">
-                        <div
-                            class="bg-white rounded-3xl shadow-2xl p-12 lg:p-16 border border-gray-100 pointer-events-auto flex gap-10">
-                            <div class="grid grid-cols-5 gap-10 flex-1">
-                                <!-- Corporal -->
-                                <div class="flex flex-col">
-                                    <h5
-                                        class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4">
-                                        CORPORALES</h5>
-                                    <ul class="space-y-3">
-                                        <li><a href="tienda.html?cat=body-shape"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Body
-                                                Shape</a></li>
-                                        <li><a href="tienda.html?cat=bodysculptpro"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Bodysculpt
-                                                Pro</a></li>
-                                        <li><a href="tienda.html?cat=criofrecuencia"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Criofrecuencia</a>
-                                        </li>
-                                        <li><a href="tienda.html?cat=criolipolisis"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Criolipólisis</a>
-                                        </li>
-                                        <li><a href="tienda.html?cat=depilacion"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Depilación
-                                                Laser / IPL</a></li>
-                                        <li><a href="tienda.html?cat=electroestimuladores"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Electroestimuladores</a>
-                                        </li>
-                                        <li><a href="tienda.html?cat=hifu"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">HIFU
-                                                Corporal</a></li>
-                                        <li><a href="tienda.html?cat=lipolaser-laserlipolisis"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Lipoláser
-                                                / Laserlipólisis</a></li>
-                                        <li><a href="tienda.html?cat=ondas-de-choque"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Ondas
-                                                de Choque</a></li>
-                                        <li><a href="tienda.html?cat=presoterapia"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Presoterapia</a>
-                                        </li>
-                                        <li><a href="tienda.html?cat=vacuumterapia"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Vacuumterapia
-                                                / Glúteos</a></li>
-                                    </ul>
-                                </div>
-                                <!-- Facial -->
-                                <div class="flex flex-col">
-                                    <h5
-                                        class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4">
-                                        FACIALES</h5>
-                                    <ul class="space-y-3">
-                                        <li><a href="tienda.html?cat=analizadores-de-piel"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Analizadores
-                                                de Piel IA</a></li>
-                                        <li><a href="tienda.html?cat=dermapen"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Dermapen</a>
-                                        </li>
-                                        <li><a href="tienda.html?cat=fototerapia"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Fototerapia</a>
-                                        </li>
-                                        <li><a href="tienda.html?cat=hidrodermoabrasion"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Hidrodermo
-                                                / Hydrapeel</a></li>
-                                        <li><a href="tienda.html?cat=microdermoabrasion"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Microdermoabrasión</a>
-                                        </li>
-                                        <li><a href="tienda.html?cat=peeling-ultrasonico"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Peeling
-                                                Ultrasónico</a></li>
-                                        <li><a href="tienda.html?cat=radiofrecuencia-faciales"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Radiofrecuencia
-                                                Facial</a></li>
-                                        <li><a href="tienda.html?cat=radiofrecuencia-fraccionada"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">RF
-                                                Fraccionada</a></li>
-                                        <li><a href="tienda.html?cat=vapor-ozono"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Vapor
-                                                Ozono</a></li>
-                                    </ul>
-                                </div>
-                                <!-- Rehabilitación -->
-                                <div class="flex flex-col">
-                                    <h5
-                                        class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4">
-                                        REHABILITACIÓN</h5>
-                                    <ul class="space-y-3">
-                                        <li><a href="tienda.html?cat=electroestimulador"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Electroestimulador</a>
-                                        </li>
-                                        <li><a href="tienda.html?cat=manta-termica-sauna"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Manta
-                                                Térmica (Sauna)</a></li>
-                                        <li><a href="tienda.html?cat=ondas-de-choque-rehabilitacion"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Ondas
-                                                de Choque Rehab</a></li>
-                                        <li><a href="tienda.html?cat=tecarterapia"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Tecarterapia</a>
-                                        </li>
-                                        <li><a href="tienda.html?cat=ultrasonido-rehabilitacion"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Ultrasonido
-                                                Rehab</a></li>
-                                    </ul>
-                                </div>
-                                <!-- Mobiliario & Insumos -->
-                                <div class="flex flex-col">
-                                    <h5
-                                        class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4">
-                                        EQUIPAMIENTO</h5>
-                                    <ul class="space-y-3">
-                                        <li><a href="tienda.html?cat=mobiliario"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Mobiliario
-                                                Clínico</a></li>
-                                        <li><a href="tienda.html?cat=mesas-de-apoyo"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Mesas
-                                                de Apoyo</a></li>
-                                        <li><a href="tienda.html?cat=insumos-y-repuestos"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Insumos
-                                                y Repuestos</a></li>
-                                        <li><a href="tienda.html?cat=activos-soluciones"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Activos
-                                                / Soluciones</a></li>
-                                        <li><a href="tienda.html?cat=calentador-de-gel"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Calentador
-                                                de Gel</a></li>
-                                    </ul>
-                                </div>
-                                <!-- Otros -->
-                                <div class="flex flex-col">
-                                    <h5
-                                        class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4">
-                                        SECCIONES</h5>
-                                    <ul class="space-y-3">
-                                        <li><a href="tienda.html?cat=nuevo"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Novedades</a>
-                                        </li>
-                                        <li><a href="tienda.html?cat=ofertas"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block underline decoration-purple underline-offset-4">Ofertas
-                                                Especiales</a></li>
-                                        <li><a href="tienda.html?cat=packs"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Packs
-                                                de Lanzamiento</a></li>
-                                        <li><a href="tienda.html?cat=home-care"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Home
-                                                Care</a></li>
-                                        <li><a href="tienda.html?cat=mas-vendidos"
-                                                class="text-xs font-bold text-secondary hover:text-primary transition-colors block">Más
-                                                Vendidos</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Featured Sidebar -->
-                            <div class="w-80 flex flex-col gap-6">
-                                <div
-                                    class="flex-1 bg-gray-50 rounded-3xl p-8 border border-gray-100 flex flex-col justify-between">
-                                    <div>
-                                        <span
-                                            class="text-xs font-black text-primary uppercase tracking-widest mb-2 block">Marca
-                                            Exclusiva</span>
-                                        <h4 class="font-sync text-lg tracking-tighter mb-2">WONDER®</h4>
-                                        <p
-                                            class="text-xs text-gray-400 font-bold uppercase tracking-widest leading-tight">
-                                            Musculación Estética Profunda.</p>
-                                    </div>
-                                    <a href="tienda.html?brand=wonder"
-                                        class="text-xs font-black text-primary uppercase tracking-widest flex items-center gap-2 group/btn">
-                                        Ver Ahora <i data-lucide="arrow-right"
-                                            class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
-                                    </a>
-                                </div>
-                                <div
-                                    class="flex-1 bg-gray-50 rounded-3xl p-8 border border-gray-100 flex flex-col justify-between">
-                                    <div>
-                                        <span
-                                            class="text-xs font-black text-primary uppercase tracking-widest mb-2 block">Marca
-                                            Exclusiva</span>
-                                        <h4 class="font-sync text-lg tracking-tighter mb-2">LEGOLÁSER®</h4>
-                                        <p
-                                            class="text-xs text-gray-400 font-bold uppercase tracking-widest leading-tight">
-                                            Master en Depilación Triláser.</p>
-                                    </div>
-                                    <a href="tienda.html?brand=legolaser"
-                                        class="text-xs font-black text-primary uppercase tracking-widest flex items-center gap-2 group/btn">
-                                        Ver Ahora <i data-lucide="arrow-right"
-                                            class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Mega Menu Dropdown -->
+            <div
+              class="fixed top-20 left-1/2 -translate-x-1/2 w-full max-w-screen-2xl pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 z-50 pointer-events-none"
+            >
+              <div
+                class="bg-white rounded-3xl shadow-2xl p-12 lg:p-16 border border-gray-100 pointer-events-auto flex gap-10"
+              >
+                <div class="grid grid-cols-5 gap-10 flex-1">
+                  <!-- Corporal -->
+                  <div class="flex flex-col">
+                    <h5
+                      class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4"
+                    >
+                      CORPORALES
+                    </h5>
+                    <ul class="space-y-3">
+                      <li>
+                        <a
+                          href="tienda.html?cat=body-shape"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Body Shape</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=bodysculptpro"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Bodysculpt Pro</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=criofrecuencia"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Criofrecuencia</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=criolipolisis"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Criolipólisis</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=depilacion"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Depilación Laser / IPL</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=electroestimuladores"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Electroestimuladores</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=hifu"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >HIFU Corporal</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=lipolaser-laserlipolisis"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Lipoláser / Laserlipólisis</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=ondas-de-choque"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Ondas de Choque</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=presoterapia"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Presoterapia</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=vacuumterapia"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Vacuumterapia / Glúteos</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Facial -->
+                  <div class="flex flex-col">
+                    <h5
+                      class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4"
+                    >
+                      FACIALES
+                    </h5>
+                    <ul class="space-y-3">
+                      <li>
+                        <a
+                          href="tienda.html?cat=analizadores-de-piel"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Analizadores de Piel IA</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=dermapen"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Dermapen</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=fototerapia"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Fototerapia</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=hidrodermoabrasion"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Hidrodermo / Hydrapeel</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=microdermoabrasion"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Microdermoabrasión</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=peeling-ultrasonico"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Peeling Ultrasónico</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=radiofrecuencia-faciales"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Radiofrecuencia Facial</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=radiofrecuencia-fraccionada"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >RF Fraccionada</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=vapor-ozono"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Vapor Ozono</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Rehabilitación -->
+                  <div class="flex flex-col">
+                    <h5
+                      class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4"
+                    >
+                      REHABILITACIÓN
+                    </h5>
+                    <ul class="space-y-3">
+                      <li>
+                        <a
+                          href="tienda.html?cat=electroestimulador"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Electroestimulador</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=manta-termica-sauna"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Manta Térmica (Sauna)</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=ondas-de-choque-rehabilitacion"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Ondas de Choque Rehab</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=tecarterapia"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Tecarterapia</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=ultrasonido-rehabilitacion"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Ultrasonido Rehab</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Mobiliario & Insumos -->
+                  <div class="flex flex-col">
+                    <h5
+                      class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4"
+                    >
+                      EQUIPAMIENTO
+                    </h5>
+                    <ul class="space-y-3">
+                      <li>
+                        <a
+                          href="tienda.html?cat=mobiliario"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Mobiliario Clínico</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=mesas-de-apoyo"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Mesas de Apoyo</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=insumos-y-repuestos"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Insumos y Repuestos</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=activos-soluciones"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Activos / Soluciones</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=calentador-de-gel"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Calentador de Gel</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <!-- Otros -->
+                  <div class="flex flex-col">
+                    <h5
+                      class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-gray-50 pb-4"
+                    >
+                      SECCIONES
+                    </h5>
+                    <ul class="space-y-3">
+                      <li>
+                        <a
+                          href="tienda.html?cat=nuevo"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Novedades</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=ofertas"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block underline decoration-purple underline-offset-4"
+                          >Ofertas Especiales</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=packs"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Packs de Lanzamiento</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=home-care"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Home Care</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="tienda.html?cat=mas-vendidos"
+                          class="text-xs font-bold text-secondary hover:text-primary transition-colors block"
+                          >Más Vendidos</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
-                <a href="blog.html"
-                    class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors">Blog</a>
-                <a href="nosotros.html"
-                    class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors">Nosotros</a>
-                <a href="servicio-tecnico.html"
-                    class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors">Soporte</a>
-                <a href="contacto.html"
-                    class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors">Contacto</a>
-            </nav>
-
-            <!-- Right Actions -->
-            <div class="flex items-center gap-4">
-                <button class="hidden lg:flex p-2 hover:bg-gray-50 rounded-full transition-colors group">
-                    <i data-lucide="search"
-                        class="w-4 h-4 text-secondary group-hover:text-primary transition-colors"></i>
-                </button>
-                <button id="cart-trigger"
-                    class="hidden lg:flex p-2 hover:bg-gray-50 rounded-full transition-colors relative group">
-                    <i data-lucide="shopping-bag"
-                        class="w-4 h-4 text-secondary group-hover:text-primary transition-colors"></i>
-                    <span
-                        class="absolute -top-1 -right-1 w-4 h-4 bg-primary text-[8px] text-white flex items-center justify-center rounded-full font-black">2</span>
-                </button>
-                <button id="mobile-menu-trigger" class="lg:hidden p-2 hover:bg-gray-50 rounded-full transition-colors">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
+                <!-- Featured Sidebar -->
+                <div class="w-80 flex flex-col gap-6">
+                  <div
+                    class="flex-1 bg-gray-50 rounded-3xl p-8 border border-gray-100 flex flex-col justify-between"
+                  >
+                    <div>
+                      <span
+                        class="text-xs font-black text-primary uppercase tracking-widest mb-2 block"
+                        >Marca Exclusiva</span
+                      >
+                      <h4 class="font-sync text-lg tracking-tighter mb-2">
+                        WONDER®
+                      </h4>
+                      <p
+                        class="text-xs text-gray-400 font-bold uppercase tracking-widest leading-tight"
+                      >
+                        Musculación Estética Profunda.
+                      </p>
+                    </div>
+                    <a
+                      href="tienda.html?brand=wonder"
+                      class="text-xs font-black text-primary uppercase tracking-widest flex items-center gap-2 group/btn"
+                    >
+                      Ver Ahora
+                      <i
+                        data-lucide="arrow-right"
+                        class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"
+                      ></i>
+                    </a>
+                  </div>
+                  <div
+                    class="flex-1 bg-gray-50 rounded-3xl p-8 border border-gray-100 flex flex-col justify-between"
+                  >
+                    <div>
+                      <span
+                        class="text-xs font-black text-primary uppercase tracking-widest mb-2 block"
+                        >Marca Exclusiva</span
+                      >
+                      <h4 class="font-sync text-lg tracking-tighter mb-2">
+                        LEGOLÁSER®
+                      </h4>
+                      <p
+                        class="text-xs text-gray-400 font-bold uppercase tracking-widest leading-tight"
+                      >
+                        Master en Depilación Triláser.
+                      </p>
+                    </div>
+                    <a
+                      href="tienda.html?brand=legolaser"
+                      class="text-xs font-black text-primary uppercase tracking-widest flex items-center gap-2 group/btn"
+                    >
+                      Ver Ahora
+                      <i
+                        data-lucide="arrow-right"
+                        class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"
+                      ></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <a
+            href="blog.html"
+            class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors"
+            >Blog</a
+          >
+          <a
+            href="nosotros.html"
+            class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors"
+            >Nosotros</a
+          >
+          <a
+            href="servicio-tecnico.html"
+            class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors"
+            >Soporte</a
+          >
+          <a
+            href="contacto.html"
+            class="text-xs font-extrabold uppercase tracking-widest text-secondary hover:text-primary transition-colors"
+            >Contacto</a
+          >
+        </nav>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-4">
+          <button
+            class="hidden lg:flex p-2 hover:bg-gray-50 rounded-full transition-colors group"
+          >
+            <i
+              data-lucide="search"
+              class="w-4 h-4 text-secondary group-hover:text-primary transition-colors"
+            ></i>
+          </button>
+          <button
+            id="cart-trigger"
+            class="hidden lg:flex p-2 hover:bg-gray-50 rounded-full transition-colors relative group"
+          >
+            <i
+              data-lucide="shopping-bag"
+              class="w-4 h-4 text-secondary group-hover:text-primary transition-colors"
+            ></i>
+            <span
+              class="absolute -top-1 -right-1 w-4 h-4 bg-primary text-[8px] text-white flex items-center justify-center rounded-full font-black"
+              >2</span
+            >
+          </button>
+          <button
+            id="mobile-menu-trigger"
+            class="lg:hidden p-2 hover:bg-gray-50 rounded-full transition-colors"
+          >
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
         </div>
+      </div>
     </header>
 
     <!-- Premium Mobile Menu Overlay -->
-    <div id="mobile-menu"
-        class="fixed inset-y-0 right-0 w-full md:w-[450px] bg-white z-[100] transform translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] shadow-[-20px_0_60px_rgba(0,0,0,0.1)] lg:hidden">
-        <div class="h-full flex flex-col p-8 md:p-12">
-            <!-- Header -->
-            <div class="flex items-center justify-between mb-20">
-                <img src="assets/images/logo.webp" alt="Logo" class="h-8 w-auto">
-                <button id="mobile-menu-close"
-                    class="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all duration-300">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
-
-            <!-- Search in Mobile Menu -->
-            <div class="relative mb-10">
-                <input type="text" placeholder="Buscador de productos..."
-                    class="w-full bg-gray-50 border border-gray-100 rounded-xl px-12 py-4 text-xs font-bold uppercase tracking-widest outline-none focus:ring-2 focus:ring-primary/20 transition-all">
-                <i data-lucide="search" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"></i>
-            </div>
-
-            <!-- Navigation -->
-            <nav class="flex flex-col space-y-1">
-                <a href="index.html"
-                    class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all">
-                    <span>INICIO</span>
-                    <i data-lucide="arrow-right"
-                        class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
-                </a>
-                <a href="tienda.html"
-                    class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all">
-                    <span>TIENDA</span>
-                    <i data-lucide="arrow-right"
-                        class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
-                </a>
-                <a href="blog.html"
-                    class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all">
-                    <span>BLOG</span>
-                    <i data-lucide="arrow-right"
-                        class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
-                </a>
-                <a href="nosotros.html"
-                    class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all">
-                    <span>NOSOTROS</span>
-                    <i data-lucide="arrow-right"
-                        class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
-                </a>
-                <a href="contacto.html"
-                    class="group flex items-center justify-between py-5 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all">
-                    <span>CONTACTO</span>
-                    <i data-lucide="arrow-right"
-                        class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"></i>
-                </a>
-            </nav>
-
-            <!-- Bottom Section -->
-            <div class="mt-auto">
-                <button
-                    class="w-full bg-primary hover:bg-secondary text-white py-5 rounded-2xl text-xs font-black uppercase tracking-widest flex items-center justify-center gap-3 transition-all duration-500 mb-8 shadow-xl shadow-primary/20">
-                    <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-                    Ver Carrito (2)
-                </button>
-
-                <div class="bg-gray-50 p-6 rounded-2xl mb-8 border border-gray-100">
-                    <p class="text-[9px] font-black uppercase tracking-[0.2em] text-primary mb-2 text-center">Envíos
-                        Gratis</p>
-                    <p class="text-[10px] font-bold text-gray-400 text-center uppercase tracking-widest">Sobre $49.990
-                        en todo Chile</p>
-                </div>
-
-                <div class="flex items-center justify-between pb-4">
-                    <div class="flex gap-4">
-                        <a href="#"
-                            class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all">
-                            <i data-lucide="instagram" class="w-4 h-4"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all">
-                            <i data-lucide="facebook" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                    <span class="text-[10px] font-bold text-gray-300 uppercase tracking-widest">v2.0</span>
-                </div>
-            </div>
+    <div
+      id="mobile-menu"
+      class="fixed inset-y-0 right-0 w-full md:w-[450px] bg-white z-[100] transform translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] shadow-[-20px_0_60px_rgba(0,0,0,0.1)] lg:hidden"
+    >
+      <div class="h-full flex flex-col p-8 md:p-12">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-20">
+          <img src="assets/images/logo.webp" alt="Logo" class="h-8 w-auto" />
+          <button
+            id="mobile-menu-close"
+            class="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all duration-300"
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
         </div>
+
+        <!-- Search in Mobile Menu -->
+        <div class="relative mb-10">
+          <input
+            type="text"
+            placeholder="Buscador de productos..."
+            class="w-full bg-gray-50 border border-gray-100 rounded-xl px-12 py-4 text-xs font-bold uppercase tracking-widest outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+          />
+          <i
+            data-lucide="search"
+            class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+          ></i>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="flex flex-col space-y-1">
+          <a
+            href="index.html"
+            class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all"
+          >
+            <span>INICIO</span>
+            <i
+              data-lucide="arrow-right"
+              class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"
+            ></i>
+          </a>
+          <a
+            href="tienda.html"
+            class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all"
+          >
+            <span>TIENDA</span>
+            <i
+              data-lucide="arrow-right"
+              class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"
+            ></i>
+          </a>
+          <a
+            href="blog.html"
+            class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all"
+          >
+            <span>BLOG</span>
+            <i
+              data-lucide="arrow-right"
+              class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"
+            ></i>
+          </a>
+          <a
+            href="nosotros.html"
+            class="group flex items-center justify-between py-5 border-b border-gray-50 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all"
+          >
+            <span>NOSOTROS</span>
+            <i
+              data-lucide="arrow-right"
+              class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"
+            ></i>
+          </a>
+          <a
+            href="contacto.html"
+            class="group flex items-center justify-between py-5 text-base font-sync tracking-tighter text-secondary hover:text-primary transition-all"
+          >
+            <span>CONTACTO</span>
+            <i
+              data-lucide="arrow-right"
+              class="w-4 h-4 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all"
+            ></i>
+          </a>
+        </nav>
+
+        <!-- Bottom Section -->
+        <div class="mt-auto">
+          <button
+            class="w-full bg-primary hover:bg-secondary text-white py-5 rounded-2xl text-xs font-black uppercase tracking-widest flex items-center justify-center gap-3 transition-all duration-500 mb-8 shadow-xl shadow-primary/20"
+          >
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            Ver Carrito (2)
+          </button>
+
+          <div class="bg-gray-50 p-6 rounded-2xl mb-8 border border-gray-100">
+            <p
+              class="text-[9px] font-black uppercase tracking-[0.2em] text-primary mb-2 text-center"
+            >
+              Envíos Gratis
+            </p>
+            <p
+              class="text-[10px] font-bold text-gray-400 text-center uppercase tracking-widest"
+            >
+              Sobre $49.990 en todo Chile
+            </p>
+          </div>
+
+          <div class="flex items-center justify-between pb-4">
+            <div class="flex gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all"
+              >
+                <i data-lucide="instagram" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center text-secondary hover:bg-primary hover:text-white transition-all"
+              >
+                <i data-lucide="facebook" class="w-4 h-4"></i>
+              </a>
+            </div>
+            <span
+              class="text-[10px] font-bold text-gray-300 uppercase tracking-widest"
+              >v2.0</span
+            >
+          </div>
+        </div>
+      </div>
     </div>
 
     <main>
-        <!-- Full-bleed Hero -->
-        <section class="min-h-screen relative overflow-hidden flex items-center pt-20">
-            <div class="absolute inset-0">
-                <img src="assets/images/hero_premium.webp" alt="Medical Hero" class="w-full h-full object-cover">
+      <!-- Full-bleed Hero -->
+      <section
+        class="min-h-screen relative overflow-hidden flex items-center pt-20"
+      >
+        <div class="absolute inset-0">
+          <img
+            src="assets/images/hero_premium.webp"
+            alt="Medical Hero"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-white/10 lg:via-white/50 lg:to-transparent"
+          ></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <!-- Left: Content -->
+            <div class="lg:col-span-7">
+              <div
+                class="inline-flex items-center space-x-3 bg-primary/10 backdrop-blur-md border border-primary/20 px-5 py-2 rounded-full mb-10 overflow-hidden"
+              >
+                <span
+                  class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"
+                ></span>
+                <span
+                  class="text-primary text-xs font-black uppercase tracking-widest"
+                  >Nueva Tecnología 2026</span
+                >
+              </div>
+              <h1
+                class="font-sync text-4xl md:text-7xl lg:text-8xl text-secondary mb-10 leading-none tracking-tighter"
+              >
+                LEVEL UP <br />
+                <span class="text-primary opacity-90">AESTHETICS.</span>
+              </h1>
+              <p
+                class="text-gray-500 text-lg md:text-xl mb-12 max-w-xl font-light leading-relaxed"
+              >
+                Redefiniendo los estándares de la medicina estética con
+                tecnología de vanguardia y resultados excepcionales para
+                profesionales de élite.
+              </p>
+              <div class="flex flex-wrap gap-6">
+                <a
+                  href="tienda.html"
+                  class="bg-secondary text-white px-12 py-6 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary transition-all shadow-xl shadow-secondary/20 hover:shadow-primary/40 group flex items-center gap-3"
+                >
+                  Ver Colección
+                  <i
+                    data-lucide="chevron-right"
+                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                  ></i>
+                </a>
+                <a
+                  href="#featured"
+                  class="bg-white border border-gray-200 px-12 py-6 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-secondary hover:text-white transition-all"
+                >
+                  Explorar
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Video Frame -->
+            <div class="lg:col-span-5 relative hidden lg:block">
+              <div
+                class="aspect-portrait max-h-[85vh] mx-auto rounded-3xl overflow-hidden shadow-2xl relative group bg-gray-100 border-8 border-white"
+              >
+                <video
+                  id="hero-video"
+                  src="assets/video/inicio.mp4"
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                ></video>
                 <div
-                    class="absolute inset-0 bg-gradient-to-r from-white via-white/60 to-white/10 lg:via-white/50 lg:to-transparent">
+                  class="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent pointer-events-none"
+                ></div>
+
+                <!-- Mute/Unmute Button -->
+                <button
+                  id="video-mute-btn"
+                  onclick="toggleMute('hero-video')"
+                  class="absolute bottom-6 right-6 z-20 bg-white/20 backdrop-blur-md border border-white/30 text-white p-4 rounded-full hover:bg-white/40 transition-all duration-300 shadow-lg group/btn"
+                >
+                  <i
+                    id="mute-icon-off-hero"
+                    data-lucide="volume-x"
+                    class="w-5 h-5"
+                  ></i>
+                  <i
+                    id="mute-icon-on-hero"
+                    data-lucide="volume-2"
+                    class="w-5 h-5 hidden"
+                  ></i>
+                </button>
+
+                <!-- Mini floating label -->
+                <div
+                  class="absolute top-8 left-8 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-sm z-10 flex items-center gap-2"
+                >
+                  <span
+                    class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"
+                  ></span>
+                  <span
+                    class="text-xs font-black uppercase tracking-widest text-secondary"
+                    >Showroom En Vivo</span
+                  >
                 </div>
+              </div>
+
+              <!-- Decorative Shapes -->
+              <div
+                class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10 animate-pulse"
+              ></div>
+              <div
+                class="absolute -top-10 -left-10 w-40 h-40 bg-purple/10 rounded-full blur-3xl -z-10 animate-pulse delay-700"
+              ></div>
             </div>
+          </div>
+        </div>
 
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-                    <!-- Left: Content -->
-                    <div class="lg:col-span-7">
-                        <div
-                            class="inline-flex items-center space-x-3 bg-primary/10 backdrop-blur-md border border-primary/20 px-5 py-2 rounded-full mb-10 overflow-hidden">
-                            <span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
-                            <span class="text-primary text-xs font-black uppercase tracking-widest">Nueva
-                                Tecnología 2026</span>
-                        </div>
-                        <h1
-                            class="font-sync text-4xl md:text-7xl lg:text-8xl text-secondary mb-10 leading-none tracking-tighter">
-                            LEVEL UP <br>
-                            <span class="text-primary opacity-90">AESTHETICS.</span>
-                        </h1>
-                        <p class="text-gray-500 text-lg md:text-xl mb-12 max-w-xl font-light leading-relaxed">
-                            Redefiniendo los estándares de la medicina estética con tecnología de vanguardia y
-                            resultados
-                            excepcionales para profesionales de élite.
-                        </p>
-                        <div class="flex flex-wrap gap-6">
-                            <a href="tienda.html"
-                                class="bg-secondary text-white px-12 py-6 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary transition-all shadow-xl shadow-secondary/20 hover:shadow-primary/40 group flex items-center gap-3">
-                                Ver Colección
-                                <i data-lucide="chevron-right"
-                                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
-                            </a>
-                            <a href="#featured"
-                                class="bg-white border border-gray-200 px-12 py-6 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-secondary hover:text-white transition-all">
-                                Explorar
-                            </a>
-                        </div>
-                    </div>
+        <!-- Scroll Indicator -->
+        <div
+          class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce opacity-40"
+        >
+          <span
+            class="text-xs font-bold uppercase tracking-widest"
+            style="writing-mode: vertical-rl"
+            >Scroll</span
+          >
+          <div class="w-px h-12 bg-secondary/50"></div>
+        </div>
+      </section>
 
-                    <!-- Right: Video Frame -->
-                    <div class="lg:col-span-5 relative hidden lg:block">
-                        <div
-                            class="aspect-portrait max-h-[85vh] mx-auto rounded-3xl overflow-hidden shadow-2xl relative group bg-gray-100 border-8 border-white">
-                            <video id="hero-video" src="assets/video/inicio.mp4" autoplay muted loop playsinline
-                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"></video>
-                            <div
-                                class="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent pointer-events-none">
-                            </div>
+      <!-- Marquee Categories -->
+      <section
+        class="py-12 border-y border-gray-100 bg-white overflow-hidden relative"
+      >
+        <div
+          id="category-scroller"
+          class="flex whitespace-nowrap overflow-hidden"
+        >
+          <div
+            id="categories-container"
+            class="flex items-center space-x-20 animate-marquee"
+          >
+            <!-- Categories will be injected here repeated for infinite effect -->
+          </div>
+        </div>
+      </section>
 
-                            <!-- Mute/Unmute Button -->
-                            <button id="video-mute-btn" onclick="toggleMute('hero-video')"
-                                class="absolute bottom-6 right-6 z-20 bg-white/20 backdrop-blur-md border border-white/30 text-white p-4 rounded-full hover:bg-white/40 transition-all duration-300 shadow-lg group/btn">
-                                <i id="mute-icon-off-hero" data-lucide="volume-x" class="w-5 h-5"></i>
-                                <i id="mute-icon-on-hero" data-lucide="volume-2" class="w-5 h-5 hidden"></i>
-                            </button>
-
-                            <!-- Mini floating label -->
-                            <div
-                                class="absolute top-8 left-8 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-sm z-10 flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-                                <span class="text-xs font-black uppercase tracking-widest text-secondary">Showroom En
-                                    Vivo</span>
-                            </div>
-                        </div>
-
-                        <!-- Decorative Shapes -->
-                        <div
-                            class="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10 animate-pulse">
-                        </div>
-                        <div
-                            class="absolute -top-10 -left-10 w-40 h-40 bg-purple/10 rounded-full blur-3xl -z-10 animate-pulse delay-700">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Scroll Indicator -->
+      <!-- Editorial Grid (Bento) -->
+      <section class="py-32 bg-gray-50 px-6">
+        <div class="container mx-auto">
+          <div
+            class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch md:min-h-175"
+          >
+            <!-- Large Feature with Product Collage -->
             <div
-                class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce opacity-40">
-                <span class="text-xs font-bold uppercase tracking-widest"
-                    style="writing-mode: vertical-rl;">Scroll</span>
-                <div class="w-px h-12 bg-secondary/50"></div>
-            </div>
-        </section>
-
-        <!-- Marquee Categories -->
-        <section class="py-12 border-y border-gray-100 bg-white overflow-hidden relative">
-            <div id="category-scroller" class="flex whitespace-nowrap overflow-hidden">
-                <div id="categories-container" class="flex items-center space-x-20 animate-marquee">
-                    <!-- Categories will be injected here repeated for infinite effect -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Editorial Grid (Bento) -->
-        <section class="py-32 bg-gray-50 px-6">
-            <div class="container mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch md:min-h-175">
-                    <!-- Large Feature with Product Collage -->
-                    <div
-                        class="md:col-span-8 group relative rounded-3xl bg-white overflow-hidden aspect-video md:aspect-auto shadow-sm hover:shadow-2xl transition-all duration-700  flex flex-col">
-                        <!-- Product Collage Background -->
-                        <div class="absolute inset-0 z-0 bg-gray-50/50">
-                            <div
-                                class="absolute top-10 right-10 w-64 h-64 rotate-12 group-hover:rotate-6 transition-transform duration-1000 opacity-20 group-hover:opacity-100">
-                                <img src="assets/images/maquinas/1.webp" alt="P1" class="w-full h-full object-contain">
-                            </div>
-                            <div
-                                class="absolute bottom-20 right-40 w-48 h-48 -rotate-12 group-hover:-rotate-3 transition-transform duration-1000 opacity-20 group-hover:opacity-100 delay-100">
-                                <img src="assets/images/maquinas/2.webp" alt="P2" class="w-full h-full object-contain">
-                            </div>
-                            <div
-                                class="absolute top-1/2 right-10 w-56 h-56 rotate-6 group-hover:rotate-0 transition-transform duration-1000 opacity-10 group-hover:opacity-80 delay-200">
-                                <img src="assets/images/maquinas/3.webp" alt="P3" class="w-full h-full object-contain">
-                            </div>
-                            <div
-                                class="absolute top-20 right-1/2 w-40 h-40 -rotate-3 group-hover:rotate-12 transition-transform duration-1000 opacity-5 group-hover:opacity-60 delay-300">
-                                <img src="assets/images/maquinas/4.webp" alt="P4" class="w-full h-full object-contain">
-                            </div>
-                        </div>
-
-                        <div class="relative z-10 p-12 h-full flex flex-col justify-end">
-                            <span
-                                class="text-primary font-black uppercase tracking-widest text-xs mb-6 block">Tecnología
-                                de Punta</span>
-                            <h2 class="text-3xl md:text-6xl font-sync tracking-tighter mb-8 leading-none">
-                                EQUIPAMIENTO <br> PARA EXPERTOS.
-                            </h2>
-                            <p class="text-gray-500 font-light max-w-sm mb-10 text-sm md:text-base leading-relaxed">
-                                Innovación, precisión y confianza en cada disparo. Eleva el nivel de tus servicios con
-                                Integrakin.
-                            </p>
-                            <a href="tienda.html"
-                                class="flex items-center gap-3 text-secondary font-black uppercase tracking-widest text-xs hover:text-primary transition-colors group/btn">
-                                Descubre Más <i data-lucide="arrow-right"
-                                    class="w-5 h-5 group-hover/btn:translate-x-2 transition-transform"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Side Cards -->
-                    <div class="md:col-span-4 flex flex-col gap-8">
-                        <div
-                            class="flex-1 rounded-3xl bg-primary p-12 text-white flex flex-col justify-between group overflow-hidden relative ">
-                            <div
-                                class="absolute -top-10 -right-10 w-40 h-40 bg-white/20 blur-3xl rounded-full group-hover:scale-150 transition-transform duration-1000">
-                            </div>
-                            <div class="relative z-10">
-                                <h3 class="font-sync text-2xl mb-4 leading-none">BLOG CLÍNICO</h3>
-                                <p class="text-white/80 text-xs font-light tracking-wide">Artículos de investigación, novedades en aparatología y guías clínicas.</p>
-                            </div>
-                            <a href="blog.html" class="relative z-10 flex items-center justify-between mt-10">
-                                <span
-                                    class="bg-white text-primary text-xs font-black px-6 py-3 rounded-full uppercase tracking-widest shadow-lg">Leer Artículos</span>
-                                <i data-lucide="arrow-up-right"
-                                    class="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
-                            </a>
-                        </div>
-
-                        <div
-                            class="flex-1 rounded-3xl bg-secondary p-12 text-white flex flex-col justify-between group relative overflow-hidden ">
-                            <div
-                                class="absolute inset-0 opacity-10 grayscale group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-700">
-                                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80"
-                                    alt="Tech" class="w-full h-full object-cover">
-                            </div>
-                            <div class="relative z-10">
-                                <h3 class="font-sync text-2xl mb-4 leading-none">POST-VENTA</h3>
-                                <p class="text-gray-400 text-xs font-light tracking-wide">Soporte técnico y repuestos
-                                    originales con garantía.</p>
-                            </div>
-                            <a href="servicio-tecnico.html"
-                                class="relative z-10 flex items-center justify-between mt-10">
-                                <span
-                                    class="text-white text-xs font-black tracking-widest uppercase underline decoration-primary underline-offset-8">Solicitar
-                                    Soporte</span>
-                                <i data-lucide="settings"
-                                    class="w-5 h-5 group-hover:rotate-90 transition-transform duration-700"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Products (Skincare Editorial Style) -->
-        <section id="featured" class="py-16 bg-gray-50 px-6">
-            <div class="container mx-auto rounded-[2.5rem] bg-primary py-12 md:py-24 px-6 md:px-16 overflow-hidden relative shadow-xl text-white">
-                <div class="flex flex-col lg:flex-row gap-16 items-center w-full">
-                    <!-- Left Promo Section -->
-                    <div class="w-full lg:w-1/4 shrink-0 flex flex-col justify-between">
-                        <div>
-                            <h2
-                                class="text-4xl lg:text-5xl font-sync leading-tight text-white mb-8 tracking-tighter">
-                                Los Favoritos <br> de Nuestra <br> Comunidad
-                            </h2>
-                            <p class="text-white/80 text-sm font-light leading-relaxed mb-10 max-w-xs">
-                                Descubre nuestros best-sellers de skincare. Fórmulas probadas, resultados visibles y
-                                amados por miles.
-                            </p>
-                        </div>
-
-                        <div class="flex flex-col gap-8">
-                            <!-- Desktop Nav Arrows -->
-                            <div class="hidden lg:flex gap-4">
-                                <button id="featured-prev"
-                                    class="w-14 h-14 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-primary transition-all">
-                                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
-                                </button>
-                                <button id="featured-next"
-                                    class="w-14 h-14 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-primary transition-all">
-                                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
-                                </button>
-                            </div>
-
-                            <a href="tienda.html"
-                                class="inline-flex items-center justify-center px-8 py-4 bg-white text-secondary rounded-full text-xs font-black uppercase tracking-widest hover:bg-secondary hover:text-white transition-all shadow-xl hover:shadow-black/20 group">
-                                VER TODOS LOS FAVORITOS
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Right Product Scroll -->
-                    <div class="w-full lg:w-3/4 relative group/featured">
-                        <!-- Mobile Nav Arrows -->
-                        <div
-                            class="flex lg:hidden absolute inset-y-0 left-0 right-0 pointer-events-none items-center justify-between z-20 px-2 transition-opacity">
-                            <button id="featured-prev-mb"
-                                class="w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center pointer-events-auto active:scale-95 transition-transform border border-white/10">
-                                <i data-lucide="chevron-left" class="w-5 h-5 text-primary"></i>
-                            </button>
-                            <button id="featured-next-mb"
-                                class="w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center pointer-events-auto active:scale-95 transition-transform border border-white/10">
-                                <i data-lucide="chevron-right" class="w-5 h-5 text-primary"></i>
-                            </button>
-                        </div>
-
-                        <div id="featured-grid"
-                            class="flex overflow-x-auto gap-8 pb-10 hide-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory">
-                            <!-- Loading state -->
-                            <div class="w-80 h-96 bg-white/10 rounded-[2.5rem] animate-pulse shrink-0 snap-start"></div>
-                            <div class="w-80 h-96 bg-white/10 rounded-[2.5rem] animate-pulse shrink-0 snap-start"></div>
-                            <div class="w-80 h-96 bg-white/10 rounded-[2.5rem] animate-pulse shrink-0 snap-start"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Wide Aesthetic Callout -->
-        <section class="py-40 bg-secondary text-white relative overflow-hidden">
-            <div class="absolute inset-0 opacity-30 mix-blend-overlay max-h-fit">
-                <div class="grid grid-cols-6 h-full">
-                    <div class="border-r border-white/5 h-full"></div>
-                    <div class="border-r border-white/5 h-full"></div>
-                    <div class="border-r border-white/5 h-full"></div>
-                    <div class="border-r border-white/5 h-full"></div>
-                    <div class="border-r border-white/5 h-full"></div>
-                </div>
-            </div>
-
-            <div class="container mx-auto px-6 text-center relative z-10">
-                <h2 class="font-sync text-4xl md:text-8xl tracking-tighter mb-12 uppercase leading-none opacity-10">
-                    INTEGRAKIN</h2>
-                <div class="max-w-3xl mx-auto">
-                    <p class="text-xl md:text-3xl font-light leading-relaxed mb-16 text-balanced">
-                        “La tecnología no es nada si no está al servicio de la salud y el bienestar humano.”
-                    </p>
-                    <div class="flex justify-center flex-col items-center gap-6">
-                        <img src="assets/images/logo-bl.webp" alt="Logo White" class="h-16 w-auto mb-8 opacity-80">
-                        <a href="nosotros.html"
-                            class="bg-primary text-white px-16 py-8 rounded-full text-xs font-black uppercase tracking-widest hover:bg-white hover:text-secondary transition-all">Ver
-                            Nuestra Historia</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Offers Gallery -->
-        <section id="offers" class="py-32 bg-white overflow-hidden">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8">
-                    <div>
-                        <span
-                            class="text-primary font-black uppercase tracking-widest text-xs mb-4 block">Oportunidades</span>
-                        <h2 class="font-sync text-4xl lg:text-5xl tracking-tighter uppercase leading-none">
-                            OFERTAS <br> <span class="text-primary italic opacity-90">ESPECIALES.</span>
-                        </h2>
-                    </div>
-                    <p class="text-gray-500 font-light max-w-xs text-sm leading-relaxed">
-                        Precios exclusivos por tiempo limitado en nuestras líneas más destacadas de aparatología y
-                        cuidado clínico.
-                    </p>
-                </div>
-
-                <div id="offers-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-24">
-                    <!-- Loading state -->
-                    <div class="aspect-square bg-gray-100 rounded-[2.5rem] animate-pulse"></div>
-                    <div class="aspect-square bg-gray-100 rounded-[2.5rem] animate-pulse"></div>
-                    <div class="aspect-square bg-gray-100 rounded-[2.5rem] animate-pulse"></div>
-                    <div class="aspect-square bg-gray-100 rounded-[2.5rem] animate-pulse"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Minimalist Brands -->
-        <section class="py-24 border-t border-gray-50">
-            <div class="container mx-auto px-6">
+              class="md:col-span-8 group relative rounded-3xl bg-white overflow-hidden aspect-video md:aspect-auto shadow-sm hover:shadow-2xl transition-all duration-700 flex flex-col"
+            >
+              <!-- Product Collage Background -->
+              <div class="absolute inset-0 z-0 bg-gray-50/50">
                 <div
-                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-16 items-center justify-items-center grayscale opacity-40 hover:opacity-100 transition-all duration-1000">
-                    <img src="assets/images/brands/dermopro.webp" alt="Brand"
-                        class="h-32 w-auto drop-shadow-sm object-contain">
-                    <img src="assets/images/brands/caremedical.webp" alt="Brand"
-                        class="h-32 w-auto drop-shadow-sm object-contain">
-                    <img src="assets/images/brands/bodyup.webp" alt="Brand"
-                        class="h-32 w-auto drop-shadow-sm object-contain">
-                    <img src="assets/images/brands/hydraboost.webp" alt="Brand"
-                        class="h-12 md:h-14 w-auto drop-shadow-sm object-contain">
-                    <img src="assets/images/brands/bodysculpt.webp" alt="Brand"
-                        class="h-12 md:h-14 w-auto drop-shadow-sm object-contain">
+                  class="absolute top-10 right-10 w-64 h-64 rotate-12 group-hover:rotate-6 transition-transform duration-1000 opacity-20 group-hover:opacity-100"
+                >
+                  <img
+                    src="assets/images/maquinas/1.webp"
+                    alt="P1"
+                    class="w-full h-full object-contain"
+                  />
                 </div>
-            </div>
-        </section>
-
-        <!-- Contact & Map Section -->
-        <section class="py-32 bg-white relative">
-            <div class="container mx-auto px-6 ">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                    <div>
-                        <span
-                            class="text-primary font-black uppercase tracking-widest text-xs mb-6 block">Visítanos</span>
-                        <h2 class="font-sync text-4xl md:text-6xl tracking-tighter mb-12 uppercase leading-none">
-                            NUESTRA <br> CENTRAL.
-                        </h2>
-
-                        <div class="space-y-12">
-                            <div class="flex gap-8 group ">
-                                <div
-                                    class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">
-                                        Showroom Principal</h4>
-                                    <p class="text-lg font-bold text-secondary">Calle Limache 3363, Local 10, Viña
-                                        del
-                                        Mar, Chile.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-8 group">
-                                <div
-                                    class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                                    <i data-lucide="phone" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">
-                                        Call Center</h4>
-                                    <p class="text-lg font-bold text-secondary">+569 89503110</p>
-                                    <p class="text-lg font-bold text-secondary">+569 34139257</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-8 group">
-                                <div
-                                    class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                                    <i data-lucide="mail" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">
-                                        Email Oficial</h4>
-                                    <p class="text-lg font-bold text-secondary">contacto@integrakin.cl</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-8 group">
-                                <div
-                                    class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                                    <i data-lucide="clock" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-xs font-black uppercase tracking-widest text-gray-400 mb-2">
-                                        Horario de atención</h4>
-                                    <p class="text-lg font-bold text-secondary">Lunes a Viernes de 9:00 a 18:00 hrs
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="mt-16 p-8 bg-gray-50 rounded-3xl border border-gray-100 italic font-light text-gray-500 text-sm leading-relaxed">
-                            Contamos con showroom privado para demostración de equipos. Agende su visita con un
-                            asesor especializado.
-                        </div>
-                    </div>
-
-                    <div class="relative h-150 rounded-3xl overflow-hidden shadow-2xl ">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.5360439772776!2d-71.51805259999999!3d-33.0423517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689def368555555%3A0x63a19cb7b752b14f!2sC.%20Limache%203363%2C%20Oficina%2010%2C%202562126%20Vi%C3%B1a%20del%20Mar%2C%20Valpara%C3%ADso!5e0!3m2!1ses-419!2scl!4v1776470914571!5m2!1ses-419!2scl"
-                            class="w-full h-full border-0 grayscale opacity-80 hover:opacity-100 hover:grayscale-0 duration-500"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
+                <div
+                  class="absolute bottom-20 right-40 w-48 h-48 -rotate-12 group-hover:-rotate-3 transition-transform duration-1000 opacity-20 group-hover:opacity-100 delay-100"
+                >
+                  <img
+                    src="assets/images/maquinas/2.webp"
+                    alt="P2"
+                    class="w-full h-full object-contain"
+                  />
                 </div>
+                <div
+                  class="absolute top-1/2 right-10 w-56 h-56 rotate-6 group-hover:rotate-0 transition-transform duration-1000 opacity-10 group-hover:opacity-80 delay-200"
+                >
+                  <img
+                    src="assets/images/maquinas/3.webp"
+                    alt="P3"
+                    class="w-full h-full object-contain"
+                  />
+                </div>
+                <div
+                  class="absolute top-20 right-1/2 w-40 h-40 -rotate-3 group-hover:rotate-12 transition-transform duration-1000 opacity-5 group-hover:opacity-60 delay-300"
+                >
+                  <img
+                    src="assets/images/maquinas/4.webp"
+                    alt="P4"
+                    class="w-full h-full object-contain"
+                  />
+                </div>
+              </div>
+
+              <div class="relative z-10 p-12 h-full flex flex-col justify-end">
+                <span
+                  class="text-primary font-black uppercase tracking-widest text-xs mb-6 block"
+                  >Tecnología de Punta</span
+                >
+                <h2
+                  class="text-3xl md:text-6xl font-sync tracking-tighter mb-8 leading-none"
+                >
+                  EQUIPAMIENTO <br />
+                  PARA EXPERTOS.
+                </h2>
+                <p
+                  class="text-gray-500 font-light max-w-sm mb-10 text-sm md:text-base leading-relaxed"
+                >
+                  Innovación, precisión y confianza en cada disparo. Eleva el
+                  nivel de tus servicios con Integrakin.
+                </p>
+                <a
+                  href="tienda.html"
+                  class="flex items-center gap-3 text-secondary font-black uppercase tracking-widest text-xs hover:text-primary transition-colors group/btn"
+                >
+                  Descubre Más
+                  <i
+                    data-lucide="arrow-right"
+                    class="w-5 h-5 group-hover/btn:translate-x-2 transition-transform"
+                  ></i>
+                </a>
+              </div>
             </div>
-        </section>
+
+            <!-- Side Cards -->
+            <div class="md:col-span-4 flex flex-col gap-8">
+              <div
+                class="flex-1 rounded-3xl bg-primary p-12 text-white flex flex-col justify-between group overflow-hidden relative"
+              >
+                <div
+                  class="absolute -top-10 -right-10 w-40 h-40 bg-white/20 blur-3xl rounded-full group-hover:scale-150 transition-transform duration-1000"
+                ></div>
+                <div class="relative z-10">
+                  <h3 class="font-sync text-2xl mb-4 leading-none">
+                    BLOG CLÍNICO
+                  </h3>
+                  <p class="text-white/80 text-xs font-light tracking-wide">
+                    Artículos de investigación, novedades en aparatología y
+                    guías clínicas.
+                  </p>
+                </div>
+                <a
+                  href="blog.html"
+                  class="relative z-10 flex items-center justify-between mt-10"
+                >
+                  <span
+                    class="bg-white text-primary text-xs font-black px-6 py-3 rounded-full uppercase tracking-widest shadow-lg"
+                    >Leer Artículos</span
+                  >
+                  <i
+                    data-lucide="arrow-up-right"
+                    class="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                  ></i>
+                </a>
+              </div>
+
+              <div
+                class="flex-1 rounded-3xl bg-secondary p-12 text-white flex flex-col justify-between group relative overflow-hidden"
+              >
+                <div
+                  class="absolute inset-0 opacity-10 grayscale group-hover:grayscale-0 group-hover:opacity-40 transition-all duration-700"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80"
+                    alt="Tech"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="relative z-10">
+                  <h3 class="font-sync text-2xl mb-4 leading-none">
+                    POST-VENTA
+                  </h3>
+                  <p class="text-gray-400 text-xs font-light tracking-wide">
+                    Soporte técnico y repuestos originales con garantía.
+                  </p>
+                </div>
+                <a
+                  href="servicio-tecnico.html"
+                  class="relative z-10 flex items-center justify-between mt-10"
+                >
+                  <span
+                    class="text-white text-xs font-black tracking-widest uppercase underline decoration-primary underline-offset-8"
+                    >Solicitar Soporte</span
+                  >
+                  <i
+                    data-lucide="settings"
+                    class="w-5 h-5 group-hover:rotate-90 transition-transform duration-700"
+                  ></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Products (Skincare Editorial Style) -->
+      <section id="featured" class="py-16 bg-gray-50 px-6">
+        <div
+          class="container mx-auto rounded-[2.5rem] bg-primary py-12 md:py-24 px-6 md:px-16 overflow-hidden relative shadow-xl text-white"
+        >
+          <div class="flex flex-col lg:flex-row gap-16 items-center w-full">
+            <!-- Left Promo Section -->
+            <div class="w-full lg:w-1/4 shrink-0 flex flex-col justify-between">
+              <div>
+                <h2
+                  class="text-4xl lg:text-5xl font-sync leading-tight text-white mb-8 tracking-tighter"
+                >
+                  Los Favoritos <br />
+                  de Nuestra <br />
+                  Comunidad
+                </h2>
+                <p
+                  class="text-white/80 text-sm font-light leading-relaxed mb-10 max-w-xs"
+                >
+                  Descubre nuestros best-sellers de skincare. Fórmulas probadas,
+                  resultados visibles y amados por miles.
+                </p>
+              </div>
+
+              <div class="flex flex-col gap-8">
+                <!-- Desktop Nav Arrows -->
+                <div class="hidden lg:flex gap-4">
+                  <button
+                    id="featured-prev"
+                    class="w-14 h-14 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-primary transition-all"
+                  >
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                  </button>
+                  <button
+                    id="featured-next"
+                    class="w-14 h-14 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-primary transition-all"
+                  >
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                  </button>
+                </div>
+
+                <a
+                  href="tienda.html"
+                  class="inline-flex items-center justify-center px-8 py-4 bg-white text-secondary rounded-full text-xs font-black uppercase tracking-widest hover:bg-secondary hover:text-white transition-all shadow-xl hover:shadow-black/20 group"
+                >
+                  VER TODOS LOS FAVORITOS
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Product Scroll -->
+            <div class="w-full lg:w-3/4 relative group/featured">
+              <!-- Mobile Nav Arrows -->
+              <div
+                class="flex lg:hidden absolute inset-y-0 left-0 right-0 pointer-events-none items-center justify-between z-20 px-2 transition-opacity"
+              >
+                <button
+                  id="featured-prev-mb"
+                  class="w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center pointer-events-auto active:scale-95 transition-transform border border-white/10"
+                >
+                  <i
+                    data-lucide="chevron-left"
+                    class="w-5 h-5 text-primary"
+                  ></i>
+                </button>
+                <button
+                  id="featured-next-mb"
+                  class="w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center pointer-events-auto active:scale-95 transition-transform border border-white/10"
+                >
+                  <i
+                    data-lucide="chevron-right"
+                    class="w-5 h-5 text-primary"
+                  ></i>
+                </button>
+              </div>
+
+              <div
+                id="featured-grid"
+                class="flex overflow-x-auto gap-8 pb-10 hide-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory"
+              >
+                <!-- Loading state -->
+                <div
+                  class="w-80 h-96 bg-white/10 rounded-[2.5rem] animate-pulse shrink-0 snap-start"
+                ></div>
+                <div
+                  class="w-80 h-96 bg-white/10 rounded-[2.5rem] animate-pulse shrink-0 snap-start"
+                ></div>
+                <div
+                  class="w-80 h-96 bg-white/10 rounded-[2.5rem] animate-pulse shrink-0 snap-start"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wide Aesthetic Callout -->
+      <section class="py-40 bg-secondary text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30 mix-blend-overlay max-h-fit">
+          <div class="grid grid-cols-6 h-full">
+            <div class="border-r border-white/5 h-full"></div>
+            <div class="border-r border-white/5 h-full"></div>
+            <div class="border-r border-white/5 h-full"></div>
+            <div class="border-r border-white/5 h-full"></div>
+            <div class="border-r border-white/5 h-full"></div>
+          </div>
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+          <h2
+            class="font-sync text-4xl md:text-8xl tracking-tighter mb-12 uppercase leading-none opacity-10"
+          >
+            INTEGRAKIN
+          </h2>
+          <div class="max-w-3xl mx-auto">
+            <p
+              class="text-xl md:text-3xl font-light leading-relaxed mb-16 text-balanced"
+            >
+              “La tecnología no es nada si no está al servicio de la salud y el
+              bienestar humano.”
+            </p>
+            <div class="flex justify-center flex-col items-center gap-6">
+              <img
+                src="assets/images/logo-bl.webp"
+                alt="Logo White"
+                class="h-16 w-auto mb-8 opacity-80"
+              />
+              <a
+                href="nosotros.html"
+                class="bg-primary text-white px-16 py-8 rounded-full text-xs font-black uppercase tracking-widest hover:bg-white hover:text-secondary transition-all"
+                >Ver Nuestra Historia</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Offers Gallery -->
+      <section id="offers" class="py-32 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8"
+          >
+            <div>
+              <span
+                class="text-primary font-black uppercase tracking-widest text-xs mb-4 block"
+                >Oportunidades</span
+              >
+              <h2
+                class="font-sync text-4xl lg:text-5xl tracking-tighter uppercase leading-none"
+              >
+                OFERTAS <br />
+                <span class="text-primary opacity-90">ESPECIALES.</span>
+              </h2>
+            </div>
+            <p
+              class="text-gray-500 font-light max-w-xs text-sm leading-relaxed"
+            >
+              Precios exclusivos por tiempo limitado en nuestras líneas más
+              destacadas de aparatología y cuidado clínico.
+            </p>
+          </div>
+
+          <div
+            id="offers-grid"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-24"
+          >
+            <!-- Loading state -->
+            <div
+              class="aspect-square bg-gray-100 rounded-[2.5rem] animate-pulse"
+            ></div>
+            <div
+              class="aspect-square bg-gray-100 rounded-[2.5rem] animate-pulse"
+            ></div>
+            <div
+              class="aspect-square bg-gray-100 rounded-[2.5rem] animate-pulse"
+            ></div>
+            <div
+              class="aspect-square bg-gray-100 rounded-[2.5rem] animate-pulse"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Minimalist Brands -->
+      <section class="py-24 border-t border-gray-50">
+        <div class="container mx-auto px-6">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-16 items-center justify-items-center grayscale opacity-40 hover:opacity-100 transition-all duration-1000"
+          >
+            <img
+              src="assets/images/brands/dermopro.webp"
+              alt="Brand"
+              class="h-32 w-auto drop-shadow-sm object-contain"
+            />
+            <img
+              src="assets/images/brands/caremedical.webp"
+              alt="Brand"
+              class="h-32 w-auto drop-shadow-sm object-contain"
+            />
+            <img
+              src="assets/images/brands/bodyup.webp"
+              alt="Brand"
+              class="h-32 w-auto drop-shadow-sm object-contain"
+            />
+            <img
+              src="assets/images/brands/hydraboost.webp"
+              alt="Brand"
+              class="h-12 md:h-14 w-auto drop-shadow-sm object-contain"
+            />
+            <img
+              src="assets/images/brands/bodysculpt.webp"
+              alt="Brand"
+              class="h-12 md:h-14 w-auto drop-shadow-sm object-contain"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact & Map Section -->
+      <section class="py-32 bg-white relative">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div>
+              <span
+                class="text-primary font-black uppercase tracking-widest text-xs mb-6 block"
+                >Visítanos</span
+              >
+              <h2
+                class="font-sync text-4xl md:text-6xl tracking-tighter mb-12 uppercase leading-none"
+              >
+                NUESTRA <br />
+                CENTRAL.
+              </h2>
+
+              <div class="space-y-12">
+                <div class="flex gap-8 group">
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500"
+                  >
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="text-xs font-black uppercase tracking-widest text-gray-400 mb-2"
+                    >
+                      Showroom Principal
+                    </h4>
+                    <p class="text-lg font-bold text-secondary">
+                      Calle Limache 3363, Local 10, Viña del Mar, Chile.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-8 group">
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500"
+                  >
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="text-xs font-black uppercase tracking-widest text-gray-400 mb-2"
+                    >
+                      Call Center
+                    </h4>
+                    <p class="text-lg font-bold text-secondary">
+                      +569 89503110
+                    </p>
+                    <p class="text-lg font-bold text-secondary">
+                      +569 34139257
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-8 group">
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500"
+                  >
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="text-xs font-black uppercase tracking-widest text-gray-400 mb-2"
+                    >
+                      Email Oficial
+                    </h4>
+                    <p class="text-lg font-bold text-secondary">
+                      contacto@integrakin.cl
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex gap-8 group">
+                  <div
+                    class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500"
+                  >
+                    <i data-lucide="clock" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4
+                      class="text-xs font-black uppercase tracking-widest text-gray-400 mb-2"
+                    >
+                      Horario de atención
+                    </h4>
+                    <p class="text-lg font-bold text-secondary">
+                      Lunes a Viernes de 9:00 a 18:00 hrs
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="mt-16 p-8 bg-gray-50 rounded-3xl border border-gray-100 font-light text-gray-500 text-sm leading-relaxed"
+              >
+                Contamos con showroom privado para demostración de equipos.
+                Agende su visita con un asesor especializado.
+              </div>
+            </div>
+
+            <div class="relative h-150 rounded-3xl overflow-hidden shadow-2xl">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3344.5360439772776!2d-71.51805259999999!3d-33.0423517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689def368555555%3A0x63a19cb7b752b14f!2sC.%20Limache%203363%2C%20Oficina%2010%2C%202562126%20Vi%C3%B1a%20del%20Mar%2C%20Valpara%C3%ADso!5e0!3m2!1ses-419!2scl!4v1776470914571!5m2!1ses-419!2scl"
+                class="w-full h-full border-0 grayscale opacity-80 hover:opacity-100 hover:grayscale-0 duration-500"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Refined Footer -->
-    <footer class="bg-secondary text-white pt-40 pb-20 overflow-hidden relative">
-        <!-- Decoration element -->
-        <div class="absolute top-0 right-0 w-1/3 h-px bg-gradient-to-l from-primary/50 to-transparent"></div>
+    <footer
+      class="bg-secondary text-white pt-40 pb-20 overflow-hidden relative"
+    >
+      <!-- Decoration element -->
+      <div
+        class="absolute top-0 right-0 w-1/3 h-px bg-gradient-to-l from-primary/50 to-transparent"
+      ></div>
 
-        <div class="container mx-auto px-6">
-            <!-- Newsletter Section (Enhanced Visibility) -->
-            <div
-                class="bg-primary/5 rounded-3xl p-12 lg:p-20 mb-32 border border-white/5 relative overflow-hidden group">
-                <div
-                    class="absolute top-0 right-0 p-20 opacity-10 group-hover:scale-110 transition-transform duration-1000">
-                    <i data-lucide="send" class="w-64 h-64 text-white"></i>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 text-left">
-                    <div>
-                        <h3 class="font-header text-4xl lg:text-6xl tracking-tighter mb-6 leading-none">
-                            ÚNETE A LA <br><span class="text-primary italic">VANGUARDIA.</span>
-                        </h3>
-                        <p class="text-gray-400 text-lg font-light max-w-sm">Recibe lanzamientos exclusivos, formación
-                            técnica y ofertas solo para miembros.</p>
-                    </div>
-                    <div>
-                        <form class="flex flex-col sm:flex-row gap-4">
-                            <input type="email" placeholder="TU CORREO ELECTRÓNICO"
-                                class="flex-1 bg-white/10 border border-white/10 rounded-full px-8 py-5 text-sm font-bold uppercase tracking-widest focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none">
-                            <button
-                                class="bg-primary hover:bg-white hover:text-secondary text-white px-10 py-5 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-500 whitespace-nowrap">
-                                Suscribirme
-                            </button>
-                        </form>
-                        <p class="text-xs text-gray-500 mt-6 uppercase tracking-widest font-bold">Al suscribirte
-                            aceptas nuestras políticas de privacidad.</p>
-                    </div>
-                </div>
+      <div class="container mx-auto px-6">
+        <!-- Newsletter Section (Enhanced Visibility) -->
+        <div
+          class="bg-primary/5 rounded-3xl p-12 lg:p-20 mb-32 border border-white/5 relative overflow-hidden group"
+        >
+          <div
+            class="absolute top-0 right-0 p-20 opacity-10 group-hover:scale-110 transition-transform duration-1000"
+          >
+            <i data-lucide="send" class="w-64 h-64 text-white"></i>
+          </div>
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10 text-left"
+          >
+            <div>
+              <h3
+                class="font-header text-4xl lg:text-6xl tracking-tighter mb-6 leading-none"
+              >
+                ÚNETE A LA <br /><span class="text-primary">VANGUARDIA.</span>
+              </h3>
+              <p class="text-gray-400 text-lg font-light max-w-sm">
+                Recibe lanzamientos exclusivos, formación técnica y ofertas solo
+                para miembros.
+              </p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-20 mb-40 text-left">
-                <div class="lg:col-span-6">
-                    <img src="assets/images/logo-bl.webp" alt="Logo" class="h-10 w-auto mb-10 opacity-80">
-                    <p class="text-gray-500 text-lg font-light leading-relaxed max-w-md mb-12">
-                        Líderes en tecnología médica estética avanzada. Equipando clínicas con los más altos estándares
-                        de calidad internacional.
-                    </p>
-                    <div class="flex items-center gap-10">
-                        <a href="https://instagram.com/integrakin" target="_blank"
-                            class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors">Instagram</a>
-                        <a href="#"
-                            class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors">Facebook</a>
-                        <a href="#"
-                            class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors">LinkedIn</a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3">
-                    <h5 class="text-primary text-xs font-bold tracking-widest uppercase mb-10">Navegación</h5>
-                    <ul class="space-y-6 text-xs font-black uppercase tracking-widest">
-                        <li><a href="tienda.html" class="hover:text-primary transition-colors">Tienda Online</a></li>
-                        <li><a href="blog.html" class="hover:text-primary transition-colors">Blog & Noticias</a>
-                        </li>
-                        <li><a href="nosotros.html" class="hover:text-primary transition-colors">Nuestra Historia</a>
-                        </li>
-                        <li><a href="servicio-tecnico.html" class="hover:text-primary transition-colors">Soporte
-                                Técnico</a></li>
-                    </ul>
-                </div>
-
-                <div class="lg:col-span-3">
-                    <h5 class="text-primary text-xs font-bold tracking-widest uppercase mb-10">Legal</h5>
-                    <ul class="space-y-6 text-xs font-black uppercase tracking-widest">
-                        <li><a href="https://integrakin.cl/terminos-y-condiciones/" target="_blank"
-                                class="hover:text-primary transition-colors">Términos y condiciones</a></li>
-                        <li><a href="https://integrakin.cl/politicas-de-privacidad/" target="_blank"
-                                class="hover:text-primary transition-colors">Políticas de privacidad</a></li>
-                        <li><a href="https://integrakin.cl/politica-de-devoluciones-y-reembolsos/" target="_blank"
-                                class="hover:text-primary transition-colors">Devoluciones</a></li>
-                        <li><a href="contacto.html" class="hover:text-primary transition-colors">Contacto</a></li>
-                    </ul>
-                </div>
+            <div>
+              <form class="flex flex-col sm:flex-row gap-4">
+                <input
+                  type="email"
+                  placeholder="TU CORREO ELECTRÓNICO"
+                  class="flex-1 bg-white/10 border border-white/10 rounded-full px-8 py-5 text-sm font-bold uppercase tracking-widest focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
+                />
+                <button
+                  class="bg-primary hover:bg-white hover:text-secondary text-white px-10 py-5 rounded-full text-xs font-black uppercase tracking-widest transition-all duration-500 whitespace-nowrap"
+                >
+                  Suscribirme
+                </button>
+              </form>
+              <p
+                class="text-xs text-gray-500 mt-6 uppercase tracking-widest font-bold"
+              >
+                Al suscribirte aceptas nuestras políticas de privacidad.
+              </p>
             </div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center pt-20 border-t border-white/5 gap-10">
-                <p class="text-xs font-bold uppercase tracking-widest text-gray-600">
-                    © 2026 INTEGRAKIN SPA <span class="mx-4 text-white/5">|</span> HECHO POR <a href="https://2zz.cl"
-                        target="_blank" class="hover:text-primary transition-colors">2zz.cl</a>
-                </p>
-                <div class="flex gap-8">
-                    <!-- Pago icons placeholder -->
-                </div>
-            </div>
+          </div>
         </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-20 mb-40 text-left"
+        >
+          <div class="lg:col-span-6">
+            <img
+              src="assets/images/logo-bl.webp"
+              alt="Logo"
+              class="h-10 w-auto mb-10 opacity-80"
+            />
+            <p
+              class="text-gray-500 text-lg font-light leading-relaxed max-w-md mb-12"
+            >
+              Líderes en tecnología médica estética avanzada. Equipando clínicas
+              con los más altos estándares de calidad internacional.
+            </p>
+            <div class="flex items-center gap-10">
+              <a
+                href="https://instagram.com/integrakin"
+                target="_blank"
+                class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+                >Instagram</a
+              >
+              <a
+                href="#"
+                class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+                >Facebook</a
+              >
+              <a
+                href="#"
+                class="text-xs font-black uppercase tracking-widest hover:text-primary transition-colors"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+
+          <div class="lg:col-span-3">
+            <h5
+              class="text-primary text-xs font-bold tracking-widest uppercase mb-10"
+            >
+              Navegación
+            </h5>
+            <ul class="space-y-6 text-xs font-black uppercase tracking-widest">
+              <li>
+                <a
+                  href="tienda.html"
+                  class="hover:text-primary transition-colors"
+                  >Tienda Online</a
+                >
+              </li>
+              <li>
+                <a href="blog.html" class="hover:text-primary transition-colors"
+                  >Blog & Noticias</a
+                >
+              </li>
+              <li>
+                <a
+                  href="nosotros.html"
+                  class="hover:text-primary transition-colors"
+                  >Nuestra Historia</a
+                >
+              </li>
+              <li>
+                <a
+                  href="servicio-tecnico.html"
+                  class="hover:text-primary transition-colors"
+                  >Soporte Técnico</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-3">
+            <h5
+              class="text-primary text-xs font-bold tracking-widest uppercase mb-10"
+            >
+              Legal
+            </h5>
+            <ul class="space-y-6 text-xs font-black uppercase tracking-widest">
+              <li>
+                <a
+                  href="https://integrakin.cl/terminos-y-condiciones/"
+                  target="_blank"
+                  class="hover:text-primary transition-colors"
+                  >Términos y condiciones</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://integrakin.cl/politicas-de-privacidad/"
+                  target="_blank"
+                  class="hover:text-primary transition-colors"
+                  >Políticas de privacidad</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://integrakin.cl/politica-de-devoluciones-y-reembolsos/"
+                  target="_blank"
+                  class="hover:text-primary transition-colors"
+                  >Devoluciones</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contacto.html"
+                  class="hover:text-primary transition-colors"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row justify-between items-center pt-20 border-t border-white/5 gap-10"
+        >
+          <p class="text-xs font-bold uppercase tracking-widest text-gray-600">
+            © 2026 INTEGRAKIN SPA <span class="mx-4 text-white/5">|</span> HECHO
+            POR
+            <a
+              href="https://2zz.cl"
+              target="_blank"
+              class="hover:text-primary transition-colors"
+              >2zz.cl</a
+            >
+          </p>
+          <div class="flex gap-8">
+            <!-- Pago icons placeholder -->
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- Cart Side Drawer (Desktop) -->
-    <div id="cart-drawer"
-        class="fixed inset-y-0 right-0 w-full sm:w-[450px] bg-white z-[120] transform translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] shadow-[-20px_0_60px_rgba(0,0,0,0.1)] flex flex-col">
-        <div class="p-8 md:p-12 h-full flex flex-col">
-            <div class="flex items-center justify-between mb-12">
-                <h2 class="font-sync text-2xl tracking-tighter text-secondary uppercase">Tu <span
-                        class="text-primary italic">Pedido.</span></h2>
-                <button id="cart-drawer-close"
-                    class="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-            </div>
-
-            <div class="flex-1 overflow-y-auto pr-4 -mr-4 space-y-8 scrollbar-hide">
-                <!-- Cart Item 1 -->
-                <div class="flex gap-6 group">
-                    <div class="w-24 h-24 bg-gray-50 rounded-2xl overflow-hidden shrink-0">
-                        <img src="assets/images/maquinas/1.webp"
-                            class="w-full h-full object-contain p-2 group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="flex-1">
-                        <div class="flex justify-between mb-1">
-                            <h3 class="text-[10px] font-black uppercase tracking-widest text-secondary">Wonder Precision
-                            </h3>
-                            <button class="text-gray-300 hover:text-primary transition-colors"><i data-lucide="trash-2"
-                                    class="w-4 h-4"></i></button>
-                        </div>
-                        <p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-4">Mobiliario</p>
-                        <span class="text-sm font-sync tracking-tighter text-secondary">$2.490.990</span>
-                    </div>
-                </div>
-                <!-- Cart Item 2 -->
-                <div class="flex gap-6 group border-t border-gray-50 pt-8">
-                    <div class="w-24 h-24 bg-gray-50 rounded-2xl overflow-hidden shrink-0">
-                        <img src="assets/images/maquinas/3.webp"
-                            class="w-full h-full object-contain p-2 group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="flex-1">
-                        <div class="flex justify-between mb-1">
-                            <h3 class="text-[10px] font-black uppercase tracking-widest text-secondary">DermoPro Max
-                            </h3>
-                            <button class="text-gray-300 hover:text-primary transition-colors"><i data-lucide="trash-2"
-                                    class="w-4 h-4"></i></button>
-                        </div>
-                        <p class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-4">Facial</p>
-                        <span class="text-sm font-sync tracking-tighter text-secondary">$1.299.990</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pt-10 border-t border-gray-100 mt-10">
-                <div class="flex justify-between mb-8">
-                    <span class="text-[10px] font-black uppercase tracking-widest text-gray-400">Total</span>
-                    <span class="text-2xl font-sync tracking-tighter text-secondary leading-none">$3.790.980</span>
-                </div>
-                <a href="carrito.html"
-                    class="w-full bg-secondary hover:bg-primary text-white py-6 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all duration-500 shadow-xl shadow-secondary/20">
-                    Finalizar Compra
-                </a>
-            </div>
+    <div
+      id="cart-drawer"
+      class="fixed inset-y-0 right-0 w-full sm:w-[450px] bg-white z-[120] transform translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] shadow-[-20px_0_60px_rgba(0,0,0,0.1)] flex flex-col"
+    >
+      <div class="p-8 md:p-12 h-full flex flex-col">
+        <div class="flex items-center justify-between mb-12">
+          <h2
+            class="font-sync text-2xl tracking-tighter text-secondary uppercase"
+          >
+            Tu <span class="text-primary">Pedido.</span>
+          </h2>
+          <button
+            id="cart-drawer-close"
+            class="w-12 h-12 rounded-full border border-gray-100 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
         </div>
+
+        <div class="flex-1 overflow-y-auto pr-4 -mr-4 space-y-8 scrollbar-hide">
+          <!-- Cart Item 1 -->
+          <div class="flex gap-6 group">
+            <div
+              class="w-24 h-24 bg-gray-50 rounded-2xl overflow-hidden shrink-0"
+            >
+              <img
+                src="assets/images/maquinas/1.webp"
+                class="w-full h-full object-contain p-2 group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between mb-1">
+                <h3
+                  class="text-[10px] font-black uppercase tracking-widest text-secondary"
+                >
+                  Wonder Precision
+                </h3>
+                <button
+                  class="text-gray-300 hover:text-primary transition-colors"
+                >
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+              <p
+                class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-4"
+              >
+                Mobiliario
+              </p>
+              <span class="text-sm font-sync tracking-tighter text-secondary"
+                >$2.490.990</span
+              >
+            </div>
+          </div>
+          <!-- Cart Item 2 -->
+          <div class="flex gap-6 group border-t border-gray-50 pt-8">
+            <div
+              class="w-24 h-24 bg-gray-50 rounded-2xl overflow-hidden shrink-0"
+            >
+              <img
+                src="assets/images/maquinas/3.webp"
+                class="w-full h-full object-contain p-2 group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="flex-1">
+              <div class="flex justify-between mb-1">
+                <h3
+                  class="text-[10px] font-black uppercase tracking-widest text-secondary"
+                >
+                  DermoPro Max
+                </h3>
+                <button
+                  class="text-gray-300 hover:text-primary transition-colors"
+                >
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+              <p
+                class="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-4"
+              >
+                Facial
+              </p>
+              <span class="text-sm font-sync tracking-tighter text-secondary"
+                >$1.299.990</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-10 border-t border-gray-100 mt-10">
+          <div class="flex justify-between mb-8">
+            <span
+              class="text-[10px] font-black uppercase tracking-widest text-gray-400"
+              >Total</span
+            >
+            <span
+              class="text-2xl font-sync tracking-tighter text-secondary leading-none"
+              >$3.790.980</span
+            >
+          </div>
+          <a
+            href="carrito.html"
+            class="w-full bg-secondary hover:bg-primary text-white py-6 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all duration-500 shadow-xl shadow-secondary/20"
+          >
+            Finalizar Compra
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- Backdrop Overlay -->
-    <div id="cart-overlay"
-        class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[110] opacity-0 invisible transition-all duration-700">
-    </div>
+    <div
+      id="cart-overlay"
+      class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[110] opacity-0 invisible transition-all duration-700"
+    ></div>
 
     <!-- Scripts -->
     <script src="assets/js/scripts.js"></script>
     <script>
-        // Video Mute Toggle (Ensuring it's here if not in scripts.js)
-        function toggleMute(videoId) {
-            const video = document.getElementById(videoId);
-            const iconOff = document.getElementById('mute-icon-off-hero');
-            const iconOn = document.getElementById('mute-icon-on-hero');
+      // Video Mute Toggle (Ensuring it's here if not in scripts.js)
+      function toggleMute(videoId) {
+        const video = document.getElementById(videoId);
+        const iconOff = document.getElementById("mute-icon-off-hero");
+        const iconOn = document.getElementById("mute-icon-on-hero");
 
-            video.muted = !video.muted;
+        video.muted = !video.muted;
 
-            if (video.muted) {
-                iconOff.classList.remove('hidden');
-                iconOn.classList.add('hidden');
-            } else {
-                iconOff.classList.add('hidden');
-                iconOn.classList.remove('hidden');
-            }
+        if (video.muted) {
+          iconOff.classList.remove("hidden");
+          iconOn.classList.add("hidden");
+        } else {
+          iconOff.classList.add("hidden");
+          iconOn.classList.remove("hidden");
         }
+      }
     </script>
-</body>
-
+  </body>
 </html>
