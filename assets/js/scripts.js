@@ -19,12 +19,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Render Helper
     const createProductCard = (p, variant = 'slider') => {
         const isSlider = variant === 'slider';
+
+        if (isSlider) {
+            // Featured/Favoritos carousel card: premium catalog treatment,
+            // badge signals popularity (not a flash-sale discount).
+            return `
+                <div class="group w-72 sm:w-80 shrink-0 snap-start bg-white rounded-[2rem] border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 relative overflow-hidden">
+                    <div class="aspect-square bg-gray-50 relative overflow-hidden">
+                        <img src="${p.img}" alt="${p.name}" class="w-full h-full object-contain p-10 group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                        <span class="absolute top-5 left-5 inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm border border-gray-100">
+                            <i data-lucide="star" class="w-3 h-3 text-primary fill-primary"></i>
+                            <span class="text-[10px] font-black uppercase tracking-widest text-secondary">Favorito</span>
+                        </span>
+
+                        <!-- Hover Action -->
+                        <div class="absolute inset-x-0 bottom-0 p-4 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-10">
+                            <button class="w-full bg-secondary hover:bg-primary text-white py-3.5 rounded-xl text-[10px] font-black uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl transition-colors relative z-30">
+                                <i data-lucide="shopping-bag" class="w-3 h-3"></i>
+                                Añadir al Carrito
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-7">
+                        <span class="text-primary text-[10px] font-black uppercase tracking-widest mb-2 block">${p.cat}</span>
+                        <h3 class="font-sync text-lg md:text-xl tracking-tighter mb-3 uppercase text-secondary leading-tight">${p.name}</h3>
+                        <p class="text-secondary font-black tracking-widest text-md mb-6">${p.price}</p>
+                        <a href="producto.html" class="flex items-center justify-between text-xs font-black uppercase tracking-widest group/btn border-t border-gray-50 pt-4 after:absolute after:inset-0 after:z-20 text-primary hover:text-secondary transition-colors">
+                            Ver Detalles <i data-lucide="arrow-right" class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
         return `
-            <div class="group ${isSlider ? 'w-80 shrink-0 snap-start' : 'w-full'} bg-white rounded-2xl border border-gray-100 hover:shadow-2xl transition-all duration-500 relative">
+            <div class="group w-full bg-white rounded-2xl border border-gray-100 hover:shadow-2xl transition-all duration-500 relative">
                 <div class="aspect-square bg-gray-50 rounded-xl overflow-hidden mb-6 relative">
                     <img src="${p.img}" alt="${p.name}" class="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" loading="lazy">
                     <span class="absolute top-4 left-4 bg-primary px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-white shadow-sm">${p.discount}</span>
-                    
+
                     <!-- Hover Action -->
                     <div class="absolute inset-x-0 bottom-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-10">
                         <button class="w-full bg-secondary hover:bg-primary text-white py-3 rounded-lg text-[10px] font-black uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl transition-colors relative z-30">
@@ -122,6 +155,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollAmount = 350;
         const setWidth = featuredGrid.scrollWidth / 3;
 
+        // Scroll progress indicator
+        const progressBar = document.getElementById('featured-progress');
+        const thumbWidthPct = progressBar
+            ? Math.min(50, Math.max(15, (featuredGrid.clientWidth / setWidth) * 100))
+            : 0;
+        if (progressBar) progressBar.style.width = thumbWidthPct + '%';
+
+        const updateProgress = () => {
+            if (!progressBar) return;
+            const posInSet = ((featuredGrid.scrollLeft - setWidth) % setWidth + setWidth) % setWidth;
+            const pct = posInSet / setWidth;
+            progressBar.style.left = (pct * (100 - thumbWidthPct)) + '%';
+        };
+        updateProgress();
+
         // Infinite detection
         featuredGrid.addEventListener('scroll', () => {
             if (featuredGrid.scrollLeft >= setWidth * 2) {
@@ -129,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (featuredGrid.scrollLeft <= 5) {
                 featuredGrid.scrollLeft = setWidth;
             }
+            updateProgress();
         }, { passive: true });
 
         featuredNext.forEach(btn => {
