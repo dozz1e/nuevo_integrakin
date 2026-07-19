@@ -17,6 +17,12 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
+    <!-- Swiper (Favoritos carousel) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
@@ -1055,13 +1061,13 @@
                 <div class="hidden lg:flex gap-4">
                   <button
                     id="featured-prev"
-                    class="w-14 h-14 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-secondary transition-all"
+                    class="featured-nav-prev w-14 h-14 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-secondary transition-all disabled:opacity-30 disabled:pointer-events-none"
                   >
                     <i data-lucide="chevron-left" class="w-6 h-6"></i>
                   </button>
                   <button
                     id="featured-next"
-                    class="w-14 h-14 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-secondary transition-all"
+                    class="featured-nav-next w-14 h-14 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-secondary transition-all disabled:opacity-30 disabled:pointer-events-none"
                   >
                     <i data-lucide="chevron-right" class="w-6 h-6"></i>
                   </button>
@@ -1084,7 +1090,7 @@
               >
                 <button
                   id="featured-prev-mb"
-                  class="w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center pointer-events-auto active:scale-95 transition-transform border border-white/10"
+                  class="featured-nav-prev w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center pointer-events-auto active:scale-95 transition-transform border border-white/10"
                 >
                   <i
                     data-lucide="chevron-left"
@@ -1093,7 +1099,7 @@
                 </button>
                 <button
                   id="featured-next-mb"
-                  class="w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center pointer-events-auto active:scale-95 transition-transform border border-white/10"
+                  class="featured-nav-next w-10 h-10 rounded-full bg-white/90 shadow-lg flex items-center justify-center pointer-events-auto active:scale-95 transition-transform border border-white/10"
                 >
                   <i
                     data-lucide="chevron-right"
@@ -1102,31 +1108,19 @@
                 </button>
               </div>
 
-              <div
-                id="featured-grid"
-                class="flex overflow-x-auto gap-8 pb-10 hide-scrollbar cursor-grab active:cursor-grabbing snap-x snap-mandatory"
-              >
-                <!-- Loading state -->
-                <div
-                  class="w-80 h-96 bg-white/10 rounded-[2rem] animate-pulse shrink-0 snap-start"
-                ></div>
-                <div
-                  class="w-80 h-96 bg-white/10 rounded-[2rem] animate-pulse shrink-0 snap-start"
-                ></div>
-                <div
-                  class="w-80 h-96 bg-white/10 rounded-[2rem] animate-pulse shrink-0 snap-start"
-                ></div>
-              </div>
-
-              <!-- Scroll progress -->
-              <div
-                class="hidden sm:block h-[3px] bg-white/10 rounded-full overflow-hidden relative mt-2"
-              >
-                <div
-                  id="featured-progress"
-                  class="h-full bg-primary rounded-full absolute top-0 left-0 transition-[left] duration-300 ease-out"
-                  style="width: 25%; left: 0%"
-                ></div>
+              <div class="featured-swiper swiper pb-10">
+                <div id="featured-grid" class="swiper-wrapper">
+                  <!-- Loading state -->
+                  <div
+                    class="swiper-slide w-72 sm:w-80 h-96 bg-white/10 rounded-[2rem] animate-pulse"
+                  ></div>
+                  <div
+                    class="swiper-slide w-72 sm:w-80 h-96 bg-white/10 rounded-[2rem] animate-pulse"
+                  ></div>
+                  <div
+                    class="swiper-slide w-72 sm:w-80 h-96 bg-white/10 rounded-[2rem] animate-pulse"
+                  ></div>
+                </div>
               </div>
             </div>
           </div>
@@ -1677,6 +1671,7 @@
     ></div>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script>
       // Video Mute Toggle (Ensuring it's here if not in scripts.js)

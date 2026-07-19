@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Featured/Favoritos carousel card: premium catalog treatment,
             // badge signals popularity (not a flash-sale discount).
             return `
-                <div class="group w-72 sm:w-80 shrink-0 snap-start bg-white rounded-[2rem] border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 relative overflow-hidden">
+                <div class="swiper-slide group bg-white rounded-[2rem] border border-gray-100 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 relative overflow-hidden">
                     <div class="aspect-square bg-gray-50 relative overflow-hidden">
                         <img src="${p.img}" alt="${p.name}" class="w-full h-full object-contain p-10 group-hover:scale-105 transition-transform duration-700" loading="lazy">
                         <span class="absolute top-5 left-5 inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm border border-gray-100">
@@ -86,17 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Index Grids (Infinite Scroll Setup)
+    // Index Grids
     const featuredItems = products.filter(p => p.featured);
-    populateGrid('featured-grid', [...featuredItems, ...featuredItems, ...featuredItems], 'slider');
-    
-    // Initial scroll to middle set for infinite loop
-    const fGrid = document.getElementById('featured-grid');
-    if (fGrid) {
-        setTimeout(() => {
-            fGrid.scrollLeft = fGrid.scrollWidth / 3;
-        }, 100);
-    }
+    populateGrid('featured-grid', featuredItems, 'slider');
 
     populateGrid('offers-grid', products.slice(0, 4), 'grid');
 
@@ -146,68 +138,41 @@ document.addEventListener('DOMContentLoaded', () => {
             lastScrollY = currentScrollY;
         }, { passive: true });
     }
-    // 7. Horizontal Scroll & Slider Logic
-    const featuredGrid = document.getElementById('featured-grid');
-    const featuredNext = [document.getElementById('featured-next'), document.getElementById('featured-next-mb')];
-    const featuredPrev = [document.getElementById('featured-prev'), document.getElementById('featured-prev-mb')];
-
-    if (featuredGrid) {
-        const scrollAmount = 350;
-        const setWidth = featuredGrid.scrollWidth / 3;
-
-        // Scroll progress indicator
-        const progressBar = document.getElementById('featured-progress');
-        const thumbWidthPct = progressBar
-            ? Math.min(50, Math.max(15, (featuredGrid.clientWidth / setWidth) * 100))
-            : 0;
-        if (progressBar) progressBar.style.width = thumbWidthPct + '%';
-
-        const updateProgress = () => {
-            if (!progressBar) return;
-            const posInSet = ((featuredGrid.scrollLeft - setWidth) % setWidth + setWidth) % setWidth;
-            const pct = posInSet / setWidth;
-            progressBar.style.left = (pct * (100 - thumbWidthPct)) + '%';
+    // 7. Featured/Favoritos Carousel (Swiper — handles loop, drag and touch natively)
+    const featuredSwiperEl = document.querySelector('.featured-swiper');
+    if (featuredSwiperEl && window.Swiper) {
+        const initFeaturedSwiper = () => {
+            new Swiper(featuredSwiperEl, {
+                // Numeric slidesPerView (not 'auto') is what Swiper's loop mode
+                // needs to reliably compute how many slides to clone — 'auto'
+                // sizing with only 8 real slides made loop silently misbehave.
+                slidesPerView: 1.15,
+                spaceBetween: 24,
+                breakpoints: {
+                    640: { slidesPerView: 2.2, spaceBetween: 32 },
+                    1024: { slidesPerView: 3.3, spaceBetween: 32 },
+                },
+                loop: true,
+                observer: true,
+                observeParents: true,
+                grabCursor: true,
+                speed: 600,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                navigation: {
+                    nextEl: '.featured-nav-next',
+                    prevEl: '.featured-nav-prev',
+                },
+            });
         };
-        updateProgress();
 
-        // Infinite detection
-        featuredGrid.addEventListener('scroll', () => {
-            if (featuredGrid.scrollLeft >= setWidth * 2) {
-                featuredGrid.scrollLeft = setWidth;
-            } else if (featuredGrid.scrollLeft <= 5) {
-                featuredGrid.scrollLeft = setWidth;
-            }
-            updateProgress();
-        }, { passive: true });
-
-        featuredNext.forEach(btn => {
-            if (btn) btn.onclick = () => {
-                featuredGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-                resetAutoplay();
-            };
-        });
-
-        featuredPrev.forEach(btn => {
-            if (btn) btn.onclick = () => {
-                featuredGrid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-                resetAutoplay();
-            };
-        });
-
-        // Autoplay
-        let autoplay = setInterval(() => {
-            featuredGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }, 5000);
-
-        function resetAutoplay() {
-            clearInterval(autoplay);
-            autoplay = setInterval(() => {
-                featuredGrid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            }, 5000);
-        }
-
-        featuredGrid.addEventListener('mouseenter', () => clearInterval(autoplay));
-        featuredGrid.addEventListener('mouseleave', () => resetAutoplay());
+        // Tailwind's CDN build applies utility classes (card widths) via an async
+        // JIT pass, which can still be pending when Swiper first measures slide
+        // widths. Deferring init a tick avoids Swiper locking in wrong widths.
+        setTimeout(initFeaturedSwiper, 50);
     }
 
     // 8. Mobile Menu Logic
@@ -229,21 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     }
 
-    // 9. Drag-to-scroll logic
-    const sliders = document.querySelectorAll('.hide-scrollbar');
-    sliders.forEach(slider => {
-        let isDown = false, startX, scrollLeft;
-        slider.onmousedown = (e) => { isDown = true; startX = e.pageX - slider.offsetLeft; scrollLeft = slider.scrollLeft; };
-        slider.onmouseleave = () => { isDown = false; };
-        slider.onmouseup = () => { isDown = false; };
-        slider.onmousemove = (e) => {
-            if (!isDown) return;
-            const x = e.pageX - slider.offsetLeft;
-            slider.scrollLeft = scrollLeft - (x - startX) * 2;
-        };
-    });
-
-    // 10. Product Detail Page Logic
+    // 9. Product Detail Page Logic
     const prodContainer = document.getElementById('product-container');
     if (prodContainer) {
         // Pick a product (using first one as default demo)
