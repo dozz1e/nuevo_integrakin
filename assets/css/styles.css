@@ -1,3 +1,11 @@
+.font-sync {
+    font-family: "Syncopate", sans-serif;
+}
+
+.font-playfair {
+    font-family: "Playfair Display", serif;
+}
+
 @keyframes shimmer {
     0% {
         background-position: -200% 0;
