@@ -99,14 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const catContainer = document.getElementById('categories-container');
     if (catContainer) {
         const cats = [
-            "36 cuotas sin interés, tarjeta Santander",
-            "Despacho gratis a todo Chile",
-            "Capacitación y formación para el uso de los equipos",
-            "12 meses de garantía",
-            "Equipos y Marcas exclusivas"
+            { icon: 'credit-card', text: '36 cuotas sin interés, tarjeta Santander' },
+            { icon: 'truck', text: 'Despacho gratis a todo Chile' },
+            { icon: 'graduation-cap', text: 'Capacitación y formación para el uso de los equipos' },
+            { icon: 'shield-check', text: '12 meses de garantía' },
+            { icon: 'gem', text: 'Equipos y Marcas exclusivas' }
         ];
-        const html = cats.map(c => `<span class="text-xl md:text-2xl font-sync tracking-tighter text-secondary hover:text-primary transition-colors cursor-default uppercase">${c}</span>`).join('');
+        const html = cats.map(c => `<span class="flex items-center gap-3 text-xl md:text-2xl font-sync tracking-tighter text-secondary hover:text-primary transition-colors cursor-default uppercase leading-none"><i data-lucide="${c.icon}" class="w-5 h-5 md:w-7 md:h-7 shrink-0"></i><span class="leading-none relative">${c.text}</span></span>`).join('');
         catContainer.innerHTML = html + html;
+        if (window.lucide) window.lucide.createIcons();
     }
 
     // 6. Header/Promo Logic
