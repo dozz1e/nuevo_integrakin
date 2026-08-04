@@ -99,13 +99,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const catContainer = document.getElementById('categories-container');
     if (catContainer) {
         const cats = [
-            { icon: 'credit-card', text: '36 cuotas sin interés, tarjeta Santander' },
-            { icon: 'truck', text: 'Despacho gratis a todo Chile' },
-            { icon: 'graduation-cap', text: 'Capacitación y formación para el uso de los equipos' },
-            { icon: 'shield-check', text: '12 meses de garantía' },
-            { icon: 'gem', text: 'Equipos y Marcas exclusivas' }
+            { icon: 'credit-card', color: '#1f88b6', title: 'Hasta 36 cuotas sin interés', text: 'Con tarjetas Santander vía Transbank, y 12 cuotas con cualquier tarjeta de crédito.' },
+            { icon: 'truck', color: '#f59e0b', title: 'Despacho gratis', text: 'Envíos sin costo a todo Chile en la compra de tus equipos.' },
+            { icon: 'graduation-cap', color: '#8b5cf6', title: 'Capacitación incluida', text: 'Formación completa para el uso correcto de cada equipo.' },
+            { icon: 'shield-check', color: '#10b981', title: '12 meses de garantía', text: 'Respaldo total en todos los equipos que adquieres.' },
+            { icon: 'gem', color: '#ec4899', title: 'Marcas exclusivas', text: 'Equipos y tecnología de vanguardia, seleccionados para ti.' }
         ];
-        const html = cats.map(c => `<span class="flex items-center gap-3 text-xl md:text-2xl font-sync tracking-tighter text-secondary hover:text-primary transition-colors cursor-default uppercase leading-none"><i data-lucide="${c.icon}" class="w-5 h-5 md:w-7 md:h-7 shrink-0"></i><span class="leading-none relative">${c.text}</span></span>`).join('');
+        const html = cats.map(c => `
+            <div class="flex items-center gap-4 shrink-0 bg-gray-50 border border-gray-100 rounded-2xl pl-4 pr-6 py-3.5 hover:bg-white hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-default">
+                <span class="shrink-0 flex items-center justify-center w-11 h-11 rounded-xl" style="background:${c.color}1A;border:1px solid ${c.color}33">
+                    <i data-lucide="${c.icon}" class="w-5 h-5" style="color:${c.color}"></i>
+                </span>
+                <span class="whitespace-normal w-56">
+                    <span class="block font-extrabold text-[13px] md:text-sm uppercase tracking-tight text-secondary leading-snug">${c.title}</span>
+                    <span class="block font-medium text-[11px] md:text-xs text-gray-500 leading-snug mt-0.5">${c.text}</span>
+                </span>
+            </div>`).join('');
         catContainer.innerHTML = html + html;
         if (window.lucide) window.lucide.createIcons();
     }
