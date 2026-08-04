@@ -1,4 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 0. Scroll Reveal (section entrance effect, all pages)
+    (() => {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let targets = Array.from(document.querySelectorAll('section'));
+        if (targets.length === 0) {
+            const main = document.querySelector('main');
+            if (main) targets = Array.from(main.children);
+        }
+        if (prefersReducedMotion || targets.length === 0) return;
+
+        targets.forEach(el => el.classList.add('reveal'));
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -80px 0px' });
+
+        targets.forEach(el => revealObserver.observe(el));
+    })();
+
+    // 0.1 Count-Up Stats (numbers animate 0 -> target on scroll into view)
+    (() => {
+        const counters = Array.from(document.querySelectorAll('[data-count-to]'));
+        if (counters.length === 0) return;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const runCounter = (el) => {
+            const target = parseFloat(el.dataset.countTo);
+            const suffix = el.dataset.suffix || '';
+            if (prefersReducedMotion || !isFinite(target)) {
+                el.textContent = target + suffix;
+                return;
+            }
+            const duration = 1500;
+            const startTime = performance.now();
+            const easeOutQuart = (t) => 1 - Math.pow(1 - t, 4);
+
+            const tick = (now) => {
+                const progress = Math.min((now - startTime) / duration, 1);
+                const value = Math.round(target * easeOutQuart(progress));
+                el.textContent = value + suffix;
+                if (progress < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+        };
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        counters.forEach(el => counterObserver.observe(el));
+    })();
+
     // 1. Initialize Lucide Icons
     if (window.lucide) {
         window.lucide.createIcons();
