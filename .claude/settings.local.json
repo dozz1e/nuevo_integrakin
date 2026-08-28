@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(impeccable)",
+      "Bash(node /home/dozzie/.claude/skills/impeccable/scripts/context.mjs --target index.html)",
+      "Bash(curl -s http://localhost:8000/index.html)",
+      "Bash(node /home/dozzie/.claude/skills/impeccable/scripts/detect.mjs --json index.html assets/js/scripts.js)",
+      "Bash(node -c /run/media/Respaldo/Trabajo/Integrakin/assets/js/scripts.js)",
+      "Bash(pkill -f \"python3 -m http.server 8000\")",
+      "Bash(node /home/dozzie/.claude/skills/impeccable/scripts/detect.mjs --json index.html)",
+      "Bash(node /home/dozzie/.claude/skills/impeccable/scripts/detect.mjs --json neofraction.html assets/js/scripts.js)"
+    ]
+  }
+}
